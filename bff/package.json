@@ -11,8 +11,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
-    "@types/node": "^25.5.2"
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.5.2",
+    "express": "^5.2.1"
   }
 }
