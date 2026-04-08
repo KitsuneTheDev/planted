@@ -17,9 +17,7 @@ services:
     ports:
       - "3001:3001"
     environment:
-      - PORT=3001
-      - REDIS_URL=redis://cache:6379
-      - NASA_API_KEY=DEMO_KEY
+      - ./bff/.env.development
     depends_on:
       - cache
     networks:
@@ -31,6 +29,8 @@ services:
     container_name: planted-frontend
     ports:
       - "5173:5173"
+    environment:
+      - ./frontend/.env.development
     depends_on:
       - bff
     stdin_open: true
