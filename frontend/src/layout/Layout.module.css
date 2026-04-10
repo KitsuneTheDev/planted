@@ -9,10 +9,7 @@
         "main"
         "main"
         "main";
-}
-
-h1, h2, h3, h4, h5, h6{
-    margin: 0;
+    grid-template-rows: repeat(5, 1fr);
 }
 
 header{
@@ -30,12 +27,32 @@ main{
     height: 100%;
     display: grid;
     grid-template-areas: 
+        "browser browser browser browser";
+    grid-template-columns: repeat(4, 1fr);
+    position: relative;
+}
+
+.contentWrapper.divided{
+    grid-template-areas:
         "plants browser browser browser";
 }
 
 .myPlants{
+    display: block;
     grid-area: plants;
     background-color: bisque;
+    position: relative;
+}
+
+.myPlants.hidden{
+    display: none;
+}
+
+.toggleMyplants{
+    background-color: bisque;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 .plantBrowser{
