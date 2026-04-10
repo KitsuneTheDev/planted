@@ -1,9 +1,44 @@
 .layoutContainer{
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
     background-color: grey;
+    grid-template-areas: 
+        "header"
+        "main"
+        "main"
+        "main"
+        "main";
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+}
+
+header{
+    grid-area: header;
+    background-color: chocolate;
+}
+
+main{
+    grid-area: main;
+    background-color: aliceblue;
+}
+
+.contentWrapper {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-areas: 
+        "plants browser browser browser";
+}
+
+.myPlants{
+    grid-area: plants;
+    background-color: bisque;
+}
+
+.plantBrowser{
+    grid-area: browser;
+    background-color: brown;
 }
