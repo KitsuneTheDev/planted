@@ -22,6 +22,8 @@ services:
       - cache
     networks:
       - flora-network
+    volumes:
+      - ./bff/src:/app/src
 
 #forntend layer
   frontend:
@@ -36,6 +38,8 @@ services:
     stdin_open: true
     networks:
       - flora-network
+    volumes:
+      - ./frontend/src:/app/src
 
 networks:
   flora-network:
