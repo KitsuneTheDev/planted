@@ -13,6 +13,7 @@ services:
 #backend for frontend layer
   bff:
     build: ./bff
+    command: npm run dev
     container_name: planted-bff
     ports:
       - "3001:3001"
