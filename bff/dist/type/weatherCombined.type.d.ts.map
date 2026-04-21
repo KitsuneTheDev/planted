@@ -1,0 +1,1 @@
+{"version":3,"file":"weatherCombined.type.d.ts","sourceRoot":"","sources":["../../src/type/weatherCombined.type.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,sBAAsB,EAAE,MAAM,mBAAmB,CAAC;AAChE,OAAO,KAAK,EAAE,sBAAsB,EAAE,MAAM,mBAAmB,CAAC;AAEhE,MAAM,WAAW,eAAe;IAC5B,OAAO,EAAE,sBAAsB,CAAC;IAChC,OAAO,EAAE,sBAAsB,CAAC;CACnC"}

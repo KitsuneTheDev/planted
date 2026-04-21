@@ -1,32 +1,35 @@
 export class ApiClient {
     #baseUrl;
-    constructor(basuUrl) {
-        this.#baseUrl = basuUrl;
+    constructor(baseUrl) {
+        this.#baseUrl = baseUrl;
     }
     async get(endpoint) {
         try {
             const response = await this.#send(endpoint, 'GET');
-            return response;
+            return {
+                responseData: response,
+                isError: false,
+            };
         }
         catch (error) {
-            throw error;
+            let errorMessage = 'Unknown error!';
+            if (error instanceof Error) {
+                errorMessage = error.message;
+            }
+            return {
+                responseData: { error: errorMessage },
+                isError: true,
+            };
         }
     }
     async #send(endpoint, method) {
-        try {
-            console.log(process.env.OPEN_WEATHER_API_KEY);
-            const response = await fetch(`${this.#baseUrl}${endpoint}&appid=${process.env.OPEN_WEATHER_API_KEY}`, {
-                method: method
-            });
-            if (!response.ok) {
-                throw new Error('No response!');
-            }
-            const data = await response.json();
-            return data;
+        const response = await fetch(`${this.#baseUrl}${endpoint}&appid=${process.env.OPEN_WEATHER_API_KEY}`, {
+            method,
+        });
+        if (!response.ok) {
+            throw new Error('No response!');
         }
-        catch (error) {
-            throw error;
-        }
+        return await response.json();
     }
 }
 //# sourceMappingURL=ApiClient.js.map

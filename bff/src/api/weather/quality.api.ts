@@ -1,5 +1,5 @@
 import type { Coordinates } from "../../type/common.type.js";
-import type { CurrentQualityResponse } from "../../type/quality.type.js";
+import type { CurrentQualityResponse } from '../../type/quality.type.js';
 import { ApiClient } from "../ApiClient.js";
 
 export class QualityApi {
