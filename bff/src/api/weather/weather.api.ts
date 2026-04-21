@@ -1,4 +1,3 @@
-import type { ApiResponse } from "../../type/api.type.js";
 import type { Coordinates } from "../../type/common.type.js";
 import type { CurrentWeatherResponse } from "../../type/weather.type.js";
 import { ApiClient } from "../ApiClient.js";
