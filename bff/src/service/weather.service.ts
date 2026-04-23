@@ -1,7 +1,7 @@
 import { WeatherApi } from "../api/weather/weather.api.js";
 import { QualityApi } from "../api/weather/quality.api.js";
 import type { Coordinates } from "../type/common.type.js";
-import type { WeatherCombined } from '../type/weatherCombined.type.js';
+import type { WeatherCombined } from '@planted/types';
 
 const weatherApi = new WeatherApi();
 const qualityApi = new QualityApi();

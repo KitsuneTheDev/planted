@@ -1,0 +1,9 @@
+{
+    "name": "planted",
+    "private": "true",
+    "workspaces": [
+        "packages/*",
+        "bff",
+        "frontend"
+    ]
+}
