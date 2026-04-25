@@ -15,6 +15,11 @@ Add plants to your household and generate (AI-powered) daily tasks that let you 
 
 ## Tech Stack
 
+### Architecture
+* Backend For Frontend(BFF) pattern
+* MVC -kai
+* Npm package for shared types
+
 ### Frontend
 * React
 * Typescript
@@ -29,4 +34,12 @@ Add plants to your household and generate (AI-powered) daily tasks that let you 
 * Typescript
 
 ### Devops
-* Docker
+* Docker Compose
+* Redis
+* Vite
+
+### API Integrations
+* OpenWeatherMap API (weather + air quality)
+* NASA POWER API
+* Perenual Plant API
+Anthropic Claude API
