@@ -13,7 +13,8 @@ services:
   bff:
     build:
       context: .
-      dockerfile: bff/Dockerfile
+      dockerfile: Dockerfile
+      target: bff
     command: npm run dev
     container_name: planted-bff
     ports:
@@ -30,7 +31,10 @@ services:
 
 #forntend layer
   frontend:
-    build: ./frontend
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: frontend
     container_name: planted-frontend
     ports:
       - "5173:5173"
@@ -42,7 +46,8 @@ services:
     networks:
       - flora-network
     volumes:
-      - ./frontend/src:/app/src
+      - ./frontend/src:/app/frontend/src
+      - ./packages:/app/packages
 
 networks:
   flora-network:
