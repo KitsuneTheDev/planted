@@ -7,7 +7,18 @@ export class ApiClient {
         this.#baseUrl = baseUrl;
     }
 
-    async get(endpoint: string): Promise<ApiResponse<T>> {
+    async get<T>(endpoint: string): Promise<ApiResponse<T>> {
+        const response = await this.#send(endpoint, 'GET')<T>;
+    }
 
+    async #send<T>(endpoint: string, method: string): Promise<ApiResponse<T>>{
+        const response = await fetch(`${this.#baseUrl}${endpoint}`, {
+            method,
+        });
+
+        if(!response.ok) {
+            const error = 'Cannot fetch data!';
+            return 
+        }
     }
 }
