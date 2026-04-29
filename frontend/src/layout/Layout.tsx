@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import style from './Layout.module.css';
-// import MyPlants from '../../features/plants/MyPlants.tsx';
+import MyPlants from '../features/plants/MyPlants';
 
 export default function Layout() {
 
@@ -17,7 +17,7 @@ export default function Layout() {
             </header>
             <aside className={asideHidden ? style.hidden : ''}>
                 <h2>My Plants</h2>
-                {/* <MyPlants /> */}
+                <MyPlants />
             </aside>
             <main>
                 <div className={`${style.contentWrapper}`}>

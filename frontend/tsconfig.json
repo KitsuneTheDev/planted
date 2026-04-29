@@ -1,6 +1,14 @@
 {
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules",
+        "options": {
+          "customMatcher": "\\.m\\.css$"
+        }
+      }
+    ],
     // File Layout
     "rootDir": "./src",
     "outDir": "./dist",
@@ -13,6 +21,7 @@
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
+    // "typeRoots": ["./node_modules/@types", "./src/types", ""],
     // and npm install -D @types/node
 
     // Other Outputs
@@ -40,5 +49,6 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-  }
+  }, 
+  "include": ["src"]
 }
