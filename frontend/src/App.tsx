@@ -7,8 +7,7 @@ function App() {
   const [weatherData, setWeatherData] = useState({});
 
   async function getWeatherData () {
-    const weatherService = new WeatherService();
-    const weatherServiceData = await weatherService.getWeatherData({ lat: 40, lon: 70 });
+    const weatherServiceData = await WeatherService.getWeatherData({ lat: 40, lon: 70 });
     setWeatherData({...weatherServiceData});
   }
 
