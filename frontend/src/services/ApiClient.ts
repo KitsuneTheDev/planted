@@ -7,14 +7,14 @@ export class ApiClient {
         this.#baseUrl = baseUrl;
     }
 
-    async get<T>(endpoint: string): Promise<T> {
+    async get<T>(endpoint: string): Promise<ApiResponse<T>> {
         const response: ApiResponse<T> = await this.#send<T>(endpoint, 'GET');
         
         if(response.isError) {
             console.error(`Could not fetch data`);
-            return response.responseData as T;
+            return response;
         } else {
-            return response.responseData as T;
+            return response;
         }
     }
 
@@ -24,7 +24,7 @@ export class ApiClient {
         });
 
         if(!response.ok) {
-            const error = 'Could not fetch data!';
+            const error = `Could not fetch data! ${response}`;
             return {
                 responseData: {error},
                 isError: true

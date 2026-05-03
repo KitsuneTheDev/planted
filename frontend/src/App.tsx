@@ -1,28 +1,20 @@
 import { useEffect, useState } from 'react';
+import { getWeatherData } from './redux/slices/weatherServiceSlice';
+import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 import Layout from './layout/Layout';
-import { WeatherService } from './services/WeatherService';
 
 function App() {
-  const [weatherData, setWeatherData] = useState({});
-
-  async function getWeatherData () {
-    const weatherServiceData = await WeatherService.getWeatherData({ lat: 40, lon: 70 });
-    setWeatherData({...weatherServiceData});
-  }
+  const { weatherServiceData, weatherServiceDataLoading, weatherServiceDataError } = useSelector((state) => state.weatherServiceReducer);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    async function getData() {
-      await getWeatherData();
-    };
-
-    getData();
-  }, []);
-
-  console.log(weatherData);
+    dispatch(getWeatherData({lat: 50, lon: 40}));
+  }, [dispatch]);
+  console.log(weatherServiceData);
 
   return (
-    <Layout />
+    weatherServiceDataLoading ? <div><h1>Loading</h1></div> : <Layout />
   );
 }
 

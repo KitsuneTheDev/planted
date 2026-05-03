@@ -1,14 +1,62 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { WeatherService } from '../../services/WeatherService';
 import type { WeatherCombined } from "@planted/types";
+import type { Coordinates } from "../../types/common.type";
 
-interface weatherState {
+export interface weatherState {
     weatherServiceData: WeatherCombined | null,
-    weatherServiceDataLoading: boolean
+    weatherServiceDataLoading: boolean,
+    weatherServiceDataError: string | null,
 }
 
 const initialState: weatherState = {
     weatherServiceData: null,
     weatherServiceDataLoading: false,
+    weatherServiceDataError: null,
 }
+
+export const getWeatherData = createAsyncThunk(
+    "weather/getWeatherData", async (coord: Coordinates, { rejectWithValue }) => {
+        try {
+            const response = await WeatherService.getWeatherData(coord);
+
+            if(response?.isError) {
+                return rejectWithValue(response.responseData.error || 'No response from weather service.');
+            } else {
+                return response.responseData;
+            }
+        } catch(error) {
+            const errorMessage: string = `Unknown error: ${error}`;
+
+            return rejectWithValue(errorMessage);
+        }
+    }
+);
+
+const weatherServiceSlice = createSlice(
+    {
+        name: "weatherService",
+        initialState,
+        reducers: {
+            // REDUCERS HERE
+        },
+        extraReducers: (builder) => {
+            builder.addCase(getWeatherData.pending, (state) => {
+                state.weatherServiceDataLoading = true;
+                state.weatherServiceData = null;
+                state.weatherServiceDataError = null;
+            }).addCase(getWeatherData.fulfilled, (state, action) => {
+                state.weatherServiceDataLoading = false;
+                state.weatherServiceData = action.payload;
+                state.weatherServiceDataError = null;
+            }).addCase(getWeatherData.rejected, (state, action) => {
+                state.weatherServiceDataLoading = false;
+                state.weatherServiceData = null;
+                state.weatherServiceDataError = action.payload as string;
+            });
+        }
+    }
+);
+
+export default weatherServiceSlice.reducer;
 

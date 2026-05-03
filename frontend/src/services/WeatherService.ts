@@ -1,6 +1,7 @@
 import type { WeatherCombined } from "@planted/types";
 import type { Coordinates } from "../types/common.type";
 import { ApiClient } from "./ApiClient";
+import type { ApiResponse } from "../types/api.type";
 
 export class WeatherService {
     private static client: ApiClient | null = null;
@@ -15,14 +16,10 @@ export class WeatherService {
         return WeatherService.client;
     }
 
-    static async getWeatherData(coord: Coordinates): Promise<WeatherCombined | void>{            
-        try {
-            const client = WeatherService.getClient();
-            const response = await client.get<WeatherCombined>(`${coord.lon}/${coord.lat}`);
-            return response;
-        } catch(error) {
-            console.error(`Could not get weather data. Error: ${error}`);
-        }
+    static async getWeatherData(coord: Coordinates): Promise<ApiResponse<WeatherCombined>>{            
+        const client = WeatherService.getClient();
+        const response = await client.get<WeatherCombined>(`${coord.lon}/${coord.lat}`);
+        return response;
     }
 }
 

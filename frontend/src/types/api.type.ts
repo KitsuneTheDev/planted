@@ -1,4 +1,3 @@
-export interface ApiResponse<T> {
-    responseData: T | {error: string},
-    isError: boolean,
-}
+export type ApiResponse<T> = 
+    | {isError: true; responseData: {error: string}}
+    | {isError: false; responseData: T}
