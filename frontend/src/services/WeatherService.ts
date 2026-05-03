@@ -22,8 +22,3 @@ export class WeatherService {
         return response;
     }
 }
-
-/*
-TODO:
-    MAKE STATIC SINGLETON AFTER IMPLEMENTING REDUX TO THE PROJECT
-*/

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { getWeatherData } from './redux/slices/weatherServiceSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
