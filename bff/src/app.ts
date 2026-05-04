@@ -1,5 +1,8 @@
 import express from 'express';
 import WeatherRouter from './route/weather.route.js';
+import { initDatabase } from './db/config.js';
+
+await initDatabase();
 
 const app  = express();
 
