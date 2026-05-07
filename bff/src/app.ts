@@ -1,4 +1,5 @@
 import express from 'express';
+import { globalErrorHandler } from './controller/errorController.js';
 import WeatherRouter from './route/weather.route.js';
 import { initDatabase } from './db/config.js';
 
@@ -7,6 +8,14 @@ await initDatabase();
 const app  = express();
 
 app.use('/api', WeatherRouter);
+
+
+// Error Handlers KEEP THEM LAST
+app.get("/sync-error", (req, res) => {
+    throw new Error("Synchronous error occured!");
+})
+
+app.use(globalErrorHandler);
 
 if(!process.env.PORT) {
     console.log('Cannot land on a PORT!');

@@ -1,5 +1,4 @@
 import { DataTypes, Model, Sequelize } from "sequelize";
-import { sequelize } from '../config';
 
 export class Plant extends Model {
     static initModel(sequelize: Sequelize) {
@@ -24,7 +23,22 @@ export class Plant extends Model {
             drought_tolerant: DataTypes.BOOLEAN,
             growth_rate: DataTypes.STRING,
             description: DataTypes.TEXT,
-            default_image: {type: DataTypes.JSONB, allowNull: true}
+            default_image: {type: DataTypes.JSONB, allowNull: true},
+
+            // FROM DETAILS
+            sunlight: DataTypes.ARRAY(DataTypes.STRING),
+            soil: DataTypes.ARRAY(DataTypes.STRING),
+            cycle: DataTypes.STRING,
+            origin: DataTypes.ARRAY(DataTypes.STRING),
+            watering_benchmark_value: DataTypes.STRING,
+            watering_benchmark_unit: DataTypes.STRING,
+            hardiness_min: DataTypes.STRING,
+            hardiness_max: DataTypes.STRING,
+            poisonous_to_humans: DataTypes.BOOLEAN,
+            poisonous_to_pets: DataTypes.BOOLEAN,
+            medicinal: DataTypes.BOOLEAN,
+            edible_fruit: DataTypes.BOOLEAN,
+            care_guides_url: DataTypes.STRING
         }, {
             sequelize,
             tableName: "plants",
