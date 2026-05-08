@@ -11,10 +11,6 @@ app.use('/api', WeatherRouter);
 
 
 // Error Handlers KEEP THEM LAST
-app.get("/sync-error", (req, res) => {
-    throw new Error("Synchronous error occured!");
-})
-
 app.use(globalErrorHandler);
 
 if(!process.env.PORT) {

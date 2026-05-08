@@ -4,6 +4,6 @@ import { asyncWrapper } from "../util/asyncWrapper.js"
 
 const router = express.Router();
 
-router.get('/weather/:lat/:lon', asyncWrapper(getCurrentWeatherData));
+router.get('/weather', asyncWrapper(getCurrentWeatherData));
 
 export default router;
