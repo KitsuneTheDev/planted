@@ -4,10 +4,9 @@ import type { Coordinates } from "../type/common.type.js";
 import { BadRequestError } from "../error/errors.js";
 
 export async function getCurrentWeatherData (req: Request, res: Response, next: NextFunction) {
-    const lon = req.params.lon;
-    const lat = req.params.lat;
+    const {lat, lon} = req.query;
 
-    if(lon === undefined || lat === undefined) {
+    if(typeof lon !== "string" || typeof lat !== "string") {
         throw new BadRequestError("Lattitude and longtitude values are required!");
     }
 
