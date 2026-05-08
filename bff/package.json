@@ -14,11 +14,12 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "tsx": "^4.7.0",
+    "@planted/types": "*",
     "@types/express": "^5.0.6",
     "@types/node": "^25.5.2",
     "express": "^5.2.1",
     "nodemon": "^3.1.14",
-    "@planted/types": "*"
+    "sequelize": "^6.37.8",
+    "tsx": "^4.7.0"
   }
 }

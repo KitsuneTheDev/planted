@@ -9,6 +9,26 @@ services:
     networks:
       - flora-network
 
+#database layer
+  database:
+    image: postgres:16
+    container_name: "planted-db"
+    environment:
+      POSTGRES_USER: kitsu
+      POSTGRES_PASSWORD: kitsu.postgres.735
+      POSTGRES_DB: planted-appdb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - flora-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kitsu -d planted-appdb"]
+      interval: 5s
+      timeout: 40s
+      retries: 5
+
 #backend for frontend layer
   bff:
     build:
@@ -22,7 +42,10 @@ services:
     env_file:
       - ./bff/.env.development
     depends_on:
-      - cache
+      cache:
+        condition: service_started
+      database:
+        condition: service_healthy
     networks:
       - flora-network
     volumes:
@@ -48,7 +71,8 @@ services:
     volumes:
       - ./frontend/src:/app/frontend/src
       - ./packages:/app/packages
-
+volumes:
+  postgres_data:
 networks:
   flora-network:
     driver: bridge
