@@ -1,6 +1,6 @@
 import { DataTypes, Model, Sequelize } from "sequelize";
 
-export class Plant extends Model {
+class Plant extends Model {
     static initModel(sequelize: Sequelize) {
         Plant.init({
             id: {type: DataTypes.INTEGER, primaryKey: true},
