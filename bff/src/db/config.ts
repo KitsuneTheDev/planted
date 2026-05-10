@@ -1,5 +1,6 @@
 import { Sequelize } from "sequelize";
-import { Plant } from './models/Plant';
+import Plant from './models/Plant';
+import City from "./models/City";
 
 export const sequelize = new Sequelize(
     process.env.POSTGRES_DB!,
@@ -17,10 +18,11 @@ export async function initDatabase() {
      initModels();
      await sequelize.authenticate();
      await sequelize.sync();
-};
+};   
 
 export function initModels() {
      Plant.initModel(sequelize);
+     City.initModel(sequelize);
 }
 
 export const database = {

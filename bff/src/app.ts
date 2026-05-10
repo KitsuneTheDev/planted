@@ -1,7 +1,7 @@
 import express from 'express';
 import { globalErrorHandler } from './controller/errorController.js';
 import WeatherRouter from './route/weather.route.js';
-import { initDatabase } from './db/config.js';
+import { initDatabase, initModels } from './db/config.js';
 
 await initDatabase();
 

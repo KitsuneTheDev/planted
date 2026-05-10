@@ -7,7 +7,8 @@
     "build": "tsc",
     "start": "node dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --watch src --ext ts --exec tsx --env-file .env.development src/app.ts"
+    "dev": "nodemon --watch src --ext ts --exec tsx --env-file .env.development src/app.ts",
+    "seed": "tsx --env-file .env.seed src/db/seeders/seedCity.ts"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +18,7 @@
     "@planted/types": "*",
     "@types/express": "^5.0.6",
     "@types/node": "^25.5.2",
+    "csv-parser": "^3.2.1",
     "express": "^5.2.1",
     "nodemon": "^3.1.14",
     "sequelize": "^6.37.8",
