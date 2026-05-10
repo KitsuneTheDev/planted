@@ -8,7 +8,8 @@
     "start": "node dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --watch src --ext ts --exec tsx --env-file .env.development src/app.ts",
-    "seed": "tsx --env-file .env.seed src/db/seeders/seedCity.ts"
+    "seed": "tsx --env-file .env.seed src/db/seeders/seedCity.ts",
+    "migrate": "tsx --env-file .env.seed src/db/migrations/addCityIndex.ts"
   },
   "keywords": [],
   "author": "",
