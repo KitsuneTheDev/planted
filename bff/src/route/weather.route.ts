@@ -1,4 +1,4 @@
-import express, { type NextFunction } from "express";
+import express from "express";
 import { getCurrentWeatherData } from "../controller/weather.controller.js";
 import { asyncWrapper } from "../util/asyncWrapper.js"
 

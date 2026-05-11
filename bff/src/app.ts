@@ -1,6 +1,7 @@
 import express from 'express';
 import { globalErrorHandler } from './controller/errorController.js';
 import WeatherRouter from './route/weather.route.js';
+import SearchRouter from './route/cityQuery.route.js';
 import { initDatabase, initModels } from './db/config.js';
 
 await initDatabase();
@@ -8,6 +9,7 @@ await initDatabase();
 const app  = express();
 
 app.use('/api', WeatherRouter);
+app.use('/api', SearchRouter);
 
 
 // Error Handlers KEEP THEM LAST
