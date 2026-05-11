@@ -27,4 +27,6 @@ export function initModels() {
 
 export const database = {
      sequelize,
+     Plant,
+     City,
 }

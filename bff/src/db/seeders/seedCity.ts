@@ -10,8 +10,8 @@ const CHUNK_SIZE: number = 1000;
 interface cityRow {
     Country: string;
     City: string;
-    Longtitude: number;
-    Lattitude: number;
+    Longitude: number;
+    Latitude: number;
 }
 
 initModels();
@@ -27,8 +27,8 @@ async function seedCity() {
                 rows.push({
                     country: row.Country,
                     city: row.City,
-                    lon: row.Longtitude,
-                    lat: row.Lattitude,
+                    lon: row.Longitude,
+                    lat: row.Latitude,
                 });
             })
             .on('end', resolve)
