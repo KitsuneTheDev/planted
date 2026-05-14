@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import style from './Layout.module.css';
 import MyPlants from '../features/plants/MyPlants';
+import Dropdown from '../components/Dropdown';
 
 export default function Layout() {
 
@@ -13,7 +14,7 @@ export default function Layout() {
             </div>
             <header role='banner'>
                 <h2>Weather</h2>
-                {/* Weather */}
+                <Dropdown />
             </header>
             <aside className={asideHidden ? style.hidden : ''}>
                 <h2>My Plants</h2>

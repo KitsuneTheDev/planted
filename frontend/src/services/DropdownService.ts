@@ -17,7 +17,8 @@ export class DropdownService {
 
     static async getDropdownData(query: string): Promise<ApiResponse<DropdownData[]>> {
         const client = DropdownService.getClient();
-        const response = await client.get<DropdownData[]>(query);
+        const response = await client.get<DropdownData[]>(`?city=${query}`);
+        console.log(response);
         return response;
     }
 }
