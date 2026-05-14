@@ -1,7 +1,7 @@
-export function debounceWrapper<T extends (...args: []) => void>(
+export function debounceWrapper<T extends (...args: Parameters<T>) => Promise<void> | void>(
     func: T,
     delay: number
-): (...args: Parameters<T>) => void {
+): (...args: Parameters<T>) => Promise<void> |void {
     let timeoutId: ReturnType<typeof setTimeout> | undefined;
 
     return function(this: T, ...args: Parameters<T>) {

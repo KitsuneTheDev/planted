@@ -11,7 +11,6 @@ function App() {
   useEffect(() => {
     dispatch(getWeatherData({lat: 50, lon: 40}));
   }, [dispatch]);
-  console.log(weatherServiceData);
 
   return (
     weatherServiceDataLoading ? <div><h1>Loading</h1></div> : <Layout />
