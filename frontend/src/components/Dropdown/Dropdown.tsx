@@ -1,16 +1,11 @@
 import style from './Dropdown.module.css';
 import type { DropdownData } from '@planted/types';
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { debounceWrapper } from '../../utils/debounceWrapper';
 import { DropdownService } from '../../services/DropdownService';
 
 export default function Dropdown() {
-    const [query, setQuery] = useState<string>('');
     const [dropdownData, setDropdownData] = useState<DropdownData[]>([]);
-
-    const updateQuery = useCallback((newQuery: string) => {
-        setQuery(newQuery);
-    }, []);
 
     const search = useMemo(
         () => debounceWrapper(async (query: string) => {
@@ -27,7 +22,6 @@ export default function Dropdown() {
             }, 500), []);
 
     const handleDropdownChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        updateQuery(e.target.value);
         search(e.target.value);
     }
 
