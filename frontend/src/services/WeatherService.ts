@@ -10,7 +10,7 @@ export class WeatherService {
 
     private static getClient(): ApiClient {
         if(!WeatherService.client) {
-            WeatherService.client = new ApiClient('/api/weather/');
+            WeatherService.client = new ApiClient('/api/weather');
         }
 
         return WeatherService.client;
@@ -18,7 +18,7 @@ export class WeatherService {
 
     static async getWeatherData(coord: Coordinates): Promise<ApiResponse<WeatherCombined>>{            
         const client = WeatherService.getClient();
-        const response = await client.get<WeatherCombined>(`${coord.lon}/${coord.lat}`);
+        const response = await client.get<WeatherCombined>(`?lon=${coord.lon}&lat=${coord.lat}`);
         return response;
     }
 }
