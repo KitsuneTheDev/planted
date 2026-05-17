@@ -2,6 +2,7 @@ import { useState } from 'react';
 import style from './Layout.module.css';
 import MyPlants from '../features/plants/MyPlants';
 import Dropdown from '../components/Dropdown';
+import Weather from '../features/weather/Weather';
 
 export default function Layout() {
 
@@ -13,7 +14,7 @@ export default function Layout() {
                 <button onClick={() => setAsideHidden(prev => !prev)}>Plants</button>
             </div>
             <header role='banner'>
-                <h2>Weather</h2>
+                <Weather />
                 <Dropdown />
             </header>
             <aside className={asideHidden ? style.hidden : ''}>
