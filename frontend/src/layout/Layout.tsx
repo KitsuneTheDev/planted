@@ -13,10 +13,10 @@ export default function Layout() {
             <div className={style.toggleContainer}>
                 <button onClick={() => setAsideHidden(prev => !prev)}>Plants</button>
             </div>
-            <header role='banner'>
+            <section role='banner' className={style.layoutBannerContainer}>
                 <Weather />
                 <Dropdown />
-            </header>
+            </section>
             <aside className={asideHidden ? style.hidden : ''}>
                 <h2>My Plants</h2>
                 <MyPlants />
