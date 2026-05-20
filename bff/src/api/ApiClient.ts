@@ -3,7 +3,7 @@ import type { ApiResponse } from "../type/api.type.js";
 export class ApiClient {
     #baseUrl: string;
 
-    constructor(baseUrl: string) {
+    constructor(baseUrl: string, private apiKey?: string) {
         this.#baseUrl = baseUrl;
     }
 
@@ -29,12 +29,13 @@ export class ApiClient {
     }
 
     async #send<T>(endpoint: string, method: string): Promise<T> {
-        const response = await fetch(`${this.#baseUrl}${endpoint}&appid=${process.env.OPEN_WEATHER_API_KEY}`, {
+        const url = this.apiKey ? `${this.#baseUrl}${endpoint}&appid=${this.apiKey}` : `${this.#baseUrl}${endpoint}`;
+        const response = await fetch(url, {
             method,
         });
 
         if(!response.ok) {
-            throw new Error('No response!');
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
 
         return await response.json();

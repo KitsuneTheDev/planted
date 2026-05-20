@@ -6,7 +6,7 @@ export class QualityApi {
     #client: ApiClient;
 
     constructor() {
-        this.#client = new ApiClient('https://api.openweathermap.org/data/2.5/air_pollution');
+        this.#client = new ApiClient('https://api.openweathermap.org/data/2.5/air_pollution', process.env.OPEN_WEATHER_API_KEY);
     }
 
     async getCurrentQuality(coord: Coordinates): Promise<CurrentQualityResponse>{

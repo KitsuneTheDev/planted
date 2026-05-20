@@ -6,7 +6,7 @@ export class WeatherApi {
     #client: ApiClient;
 
     constructor() {
-        this.#client = new ApiClient('https://api.openweathermap.org/data/2.5/weather')
+        this.#client = new ApiClient('https://api.openweathermap.org/data/2.5/weather', process.env.OPEN_WEATHER_API_KEY);
     }
 
     async getCurrentWeather(coord: Coordinates): Promise<CurrentWeatherResponse> {
