@@ -1,11 +1,30 @@
-:root{}
+:root{
+    --element-space-1: 4px;
+    --element-space-2: 8px;
+    --element-space-3: 12px;
+
+    --component-space-1: 16px;
+    --component-space-2: 20px;
+    --component-space-3: 24px;
+
+    --layout-space-1: 32px;
+    --layout-space-2: 40px;
+    --layout-space-3: 48px;
+
+    --section-space-1: 64px;
+    --section-space-2: 80px;
+    --section-space-3: 96px;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
 
 html, body, #root {
     width: 100%;
     height: 100%;
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6{
