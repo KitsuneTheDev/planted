@@ -1,15 +1,24 @@
 import style from './Layout.module.css';
-import MyPlants from '../features/plants/MyPlants';
 import Dropdown from '../components/Dropdown';
 
 export default function Layout() {
 
     return(
         <div className={style.layoutContainer}>
-            <nav role='navigation'>
-                <h2>This Navbar</h2>
-                <Dropdown />
-            </nav>
+            <header role='header'>
+                <div className={style.logoContainer}>
+                    <h3>P</h3>
+                </div>
+                <nav className={style.navbar}>
+                    <ul>
+                        <li>My Plants</li>
+                        <li>Browser</li>
+                    </ul>
+                </nav>
+                <div className={style.dropdownContainer}>
+                    <Dropdown />
+                </div>
+            </header>
             <aside role='weather-display'>
                 <h2>Weather</h2>
             </aside>

@@ -19,11 +19,6 @@ export default function Weather(): ReactElement {
 
     return(
         <div className={style.weatherContainer}>
-            <h1>Weather</h1>
-           {/* <MiniCard header='Demo' value='Demo Text' detail='dets' />
-           <MiniCard header='Demo' value='Demo Text' detail='dets' />
-           <MiniCard header='Demo' value='Demo Text' detail='dets' />
-           <MiniCard header='Demo' value='Demo Text' detail='dets' /> */}
         </div>
     );
 }

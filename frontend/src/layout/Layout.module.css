@@ -5,22 +5,19 @@
     grid-template-areas: 
         "nav"
         "main"
-        "main"
-        "main"
-        "main"
-        "main"
-        "main"
-        "main"
-        "main"
-        "main"
-        "aside"
         "aside";
-    grid-template-rows: repeat(12, 1fr);
+    grid-template-rows: auto 1fr auto;
 }
 
-nav{
+header{
     grid-area: nav;
     border: 1px solid black;
+}
+
+.logoContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 aside{
