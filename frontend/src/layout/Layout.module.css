@@ -3,40 +3,24 @@
     height: 100%;
     display: grid;
     grid-template-areas: 
-        "aside header header header header"
-        "aside header header header header"
-        "aside main main main main"
-        "aside main main main main"
-        "aside main main main main"
-        "aside main main main main";
-    grid-template-rows: repeat(6, 1fr);
-    grid-template-columns: repeat(5, 1fr);
+        "nav"
+        "main"
+        "main"
+        "main"
+        "main"
+        "main"
+        "main"
+        "main"
+        "main"
+        "main"
+        "aside"
+        "aside";
+    grid-template-rows: repeat(12, 1fr);
 }
 
-.toggleContainer {
-    display: none;
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    width: auto;
-    height: auto;
-    z-index: 50;
-}
-
-.toggleContainer button {
-    width: 80px;
-    height: 36px;
-    background-color: white;
-    color: black;
+nav{
+    grid-area: nav;
     border: 1px solid black;
-}
-
-.layoutBannerContainer{
-    grid-area: header;
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: start;
 }
 
 aside{
@@ -50,42 +34,20 @@ main{
     border: 1px solid black;
 }
 
-.contentWrapper {
-    width: 100%;
-    height: 100%;
-}
-
-.plantBrowser{
-    width: 100%;
-    height: 100%;
-}
-
-@media (max-width: 1000px) {
+@media (min-width: 1000px) {
     .layoutContainer{
-        position: relative;
         grid-template-areas: 
-            "header"
-            "header"
-            "main"
-            "main"
-            "main"
-            "main";
-        grid-template-columns: 1fr;
-    }
-
-    .toggleContainer{
-        display: none;
-    }
-
-    aside{
-        display: block;
-        position: absolute;
-        width: 30%;
-        min-width: fit-content;
-        height: 100%;
-    }
-
-    aside.hidden{
-        display: none;
+            "nav nav nav nav nav"
+            "aside main main main main"
+            "aside main main main main"
+            "aside main main main main"
+            "aside main main main main"
+            "aside main main main main"
+            "aside main main main main"
+            "aside main main main main"
+            "aside main main main main"
+            "aside main main main main"
+            "aside main main main main"
+            "aside main main main main";
     }
 }

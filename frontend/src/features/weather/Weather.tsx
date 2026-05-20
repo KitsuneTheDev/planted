@@ -3,7 +3,6 @@ import { useEffect, type ReactElement } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import type { AppDispatch, RootState } from '../../redux/store'
 import { getWeatherData } from '../../redux/slices/weatherServiceSlice';
-import MiniCard from '../../components/MiniCard/MiniCard';
 
 export default function Weather(): ReactElement {
 
@@ -20,10 +19,11 @@ export default function Weather(): ReactElement {
 
     return(
         <div className={style.weatherContainer}>
+            <h1>Weather</h1>
+           {/* <MiniCard header='Demo' value='Demo Text' detail='dets' />
            <MiniCard header='Demo' value='Demo Text' detail='dets' />
            <MiniCard header='Demo' value='Demo Text' detail='dets' />
-           <MiniCard header='Demo' value='Demo Text' detail='dets' />
-           <MiniCard header='Demo' value='Demo Text' detail='dets' />
+           <MiniCard header='Demo' value='Demo Text' detail='dets' /> */}
         </div>
     );
 }
