@@ -6,11 +6,11 @@ export class QualityApi {
     #client: ApiClient;
 
     constructor() {
-        this.#client = new ApiClient('https://api.openweathermap.org/data/2.5/air_pollution', process.env.OPEN_WEATHER_API_KEY);
+        this.#client = new ApiClient('https://api.openweathermap.org/data/2.5/air_pollution?unit=metric&', process.env.OPEN_WEATHER_API_KEY);
     }
 
     async getCurrentQuality(coord: Coordinates): Promise<CurrentQualityResponse>{
-        const response = await this.#client.get<CurrentQualityResponse>(`?lat=${coord.lat}&lon=${coord.lon}`);
+        const response = await this.#client.get<CurrentQualityResponse>(`lat=${coord.lat}&lon=${coord.lon}`);
 
         if(response.isError) {
             throw new Error((response.responseData as {error: string}).error);

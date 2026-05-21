@@ -1,0 +1,19 @@
+.dropdownOuter{
+    width: fit-content;
+    height: inherit;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.dropdownSearch{
+    width: min-content;
+}
+
+input{
+    width: 100px;
+}
+
+input::placeholder{
+    text-align: center;
+}

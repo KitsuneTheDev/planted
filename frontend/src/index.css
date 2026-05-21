@@ -14,6 +14,18 @@
     --section-space-1: 64px;
     --section-space-2: 80px;
     --section-space-3: 96px;
+
+    --font-size-1: 12px;
+    --font-size-2: 14px;
+    --font-size-3: 16px;
+    --font-size-4: 20px;
+    --font-size-5: 24px;
+    --font-size-6: 32px;
+    --font-size-7: 48px;
+
+    --font-weight-de: 500;
+    --font-weight-n: 700;
+    --font-weight-e: 900;
 }
 
 *, *::before, *::after{

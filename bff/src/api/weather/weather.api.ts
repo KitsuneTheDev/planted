@@ -6,11 +6,11 @@ export class WeatherApi {
     #client: ApiClient;
 
     constructor() {
-        this.#client = new ApiClient('https://api.openweathermap.org/data/2.5/weather', process.env.OPEN_WEATHER_API_KEY);
+        this.#client = new ApiClient('https://api.openweathermap.org/data/2.5/weather?units=metric&', process.env.OPEN_WEATHER_API_KEY);
     }
 
     async getCurrentWeather(coord: Coordinates): Promise<CurrentWeatherResponse> {
-        const response = await this.#client.get<CurrentWeatherResponse>(`?lat=${coord.lat}&lon=${coord.lon}`);
+        const response = await this.#client.get<CurrentWeatherResponse>(`lat=${coord.lat}&lon=${coord.lon}`);
 
         if(response.isError) {
             throw new Error((response.responseData as {error: string}).error);
