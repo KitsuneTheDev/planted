@@ -19,6 +19,39 @@ export default function Weather(): ReactElement {
 
     return(
         <div className={style.weatherContainer}>
+            <div className={style.weatherMain}>
+                <div className={style.temp}>
+                    <div className={style.value}>
+                        {weatherServiceData?.weather?.main.temp}
+                    </div>
+                    <div className={style.detail}>
+                        &deg;C
+                    </div>
+                </div>
+                <div className={style.feelslike}>
+                    <div className={style.value}>
+                        {weatherServiceData?.weather?.main.feels_like}
+                    </div>
+                    <div className={style.detail}>
+                        &deg;C
+                    </div>
+                </div>
+                <div className={style.humidity}>
+                    <div className={style.value}>
+                        {weatherServiceData?.weather?.main.humidity}
+                    </div>
+                    <div className={style.detail}>
+                        / 100
+                    </div>
+                </div>
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
     );
 }

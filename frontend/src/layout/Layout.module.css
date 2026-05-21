@@ -12,39 +12,78 @@
 header{
     grid-area: nav;
     border: 1px solid black;
+    display: grid;
+    grid-template-areas: 
+        "logo nav dropdown";
+    padding: var(--element-space-3) var(--element-space-3);
 }
 
 .logoContainer{
+    grid-area: logo;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logoContainer h1{
+    font-size: var(--font-size-5);
+    font-weight: var(--font-weight-e);
+}
+
+nav{
+    grid-area: nav;
+    font-size: var(--font-size-3);
+}
+
+nav ul{
+    width: inherit;
+    height: inherit;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: var(--element-space-3);
+    list-style: none;
+    padding: 0;
+}
+
+li:hover{
+    cursor: pointer;
+}
+
+.dropdownContainer{
+    grid-area: dropdown;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: var(--font-size-3);
 }
 
 aside{
     grid-area: aside;
+    width: 100%;
     border: 1px solid black;
     background-color: white;
 }
 
 main{
     grid-area: main;
+    width: 100%;
     border: 1px solid black;
 }
 
 @media (min-width: 1000px) {
     .layoutContainer{
         grid-template-areas: 
-            "nav nav nav nav nav"
-            "aside main main main main"
-            "aside main main main main"
-            "aside main main main main"
-            "aside main main main main"
-            "aside main main main main"
-            "aside main main main main"
-            "aside main main main main"
-            "aside main main main main"
-            "aside main main main main"
-            "aside main main main main"
-            "aside main main main main";
+            "nav nav"
+            "aside main";
+        grid-template-columns: 320px 1fr;
+    }
+
+    header{
+        padding: var(--element-space-3) var(--layout-space-3);
+    }
+
+    nav ul{
+        gap: var(--layout-space-3);
     }
 }

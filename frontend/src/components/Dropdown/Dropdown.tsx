@@ -28,8 +28,7 @@ export default function Dropdown() {
     return (
         <div className={`${style.dropdownOuter}`}>
             <div className={`${style.dropdownSearch}`}>
-                <label htmlFor="dropdownInput">Select Location</label>
-                <input type="text" name="dropdown-input" id="dropdownInput" onChange={handleDropdownChange} />
+                <input type="text" name="dropdown-input" placeholder='Set Location' id="dropdownInput" onChange={handleDropdownChange} />
             </div>
             <div className={`${style.dropdownDisplay} ${dropdownData.length === 0 ? style.hidden : null}`}>
                 {dropdownData.map((data, index) => {

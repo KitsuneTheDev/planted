@@ -1,5 +1,23 @@
-.weatherContainer{
-    width: fit-content;
+
+
+.weatherMain{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+        "temp feels hum";
+}
+
+.temp{
+    grid-area: temp;
+}
+
+.feelslike{
+    grid-area: feels;
+}
+
+.humidity{
+    grid-area: hum;
+}
+
+@media min-width {
+    
 }

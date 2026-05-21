@@ -1,5 +1,6 @@
 import style from './Layout.module.css';
 import Dropdown from '../components/Dropdown';
+import Weather from '../features/weather/Weather';
 
 export default function Layout() {
 
@@ -7,11 +8,11 @@ export default function Layout() {
         <div className={style.layoutContainer}>
             <header role='header'>
                 <div className={style.logoContainer}>
-                    <h3>P</h3>
+                    <h1>PlantEd.</h1>
                 </div>
                 <nav className={style.navbar}>
                     <ul>
-                        <li>My Plants</li>
+                        <li>MyPlants</li>
                         <li>Browser</li>
                     </ul>
                 </nav>
@@ -20,7 +21,7 @@ export default function Layout() {
                 </div>
             </header>
             <aside role='weather-display'>
-                <h2>Weather</h2>
+                <Weather />
             </aside>
             <main role='main-content-display'>
                 <div className={`${style.contentWrapper}`}>
