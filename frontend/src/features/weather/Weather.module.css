@@ -1,9 +1,43 @@
+.weatherContainer{
+    padding:
+        var(--element-space-1)
+        var(--element-space-3)
+        var(--element-space-3) 
+        var(--element-space-3);
+}
 
+.weatherContainer.expanded{
+    min-height: 300px;
+}
 
 .weatherMain{
     display: grid;
     grid-template-areas: 
         "temp feels hum";
+    width: 100%;
+}
+
+.label{
+    padding-bottom: var(--element-space-1);
+}
+
+.toggleContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: var(--element-space-1);
+}
+
+.weatherMain>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.value{
+    display: flex;
+    gap: var(--element-space-1);
 }
 
 .temp{
@@ -18,6 +52,12 @@
     grid-area: hum;
 }
 
-@media min-width {
-    
+@media (min-width: 1000px) {
+    .weatherContainer{
+        padding: var(--component-space-1) var(--component-space-1);
+    }
+
+    .toggleContainer{
+        display: none;
+    }
 }
