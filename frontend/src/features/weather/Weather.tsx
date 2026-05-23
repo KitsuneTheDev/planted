@@ -28,42 +28,43 @@ export default function Weather(): ReactElement {
                 {isExpanded ? 'Hide Details' : 'See Details'}
             </div>
             <div className={style.weatherMain}>
-                <div className={style.temp}>
-                    <div className={style.label}>
-                        Temperature
-                    </div>
-                    <div className={style.value}>
-                        <div className={style.data}>
-                            {weatherServiceData?.weather?.main.temp}
-                        </div>
-                        <div className={style.detail}>
-                            &deg;C
-                        </div>
-                    </div>
-                </div>
-                <div className={style.feelslike}>
-                    <div className={style.label}>
-                        Feels Like
-                    </div>
-                    <div className={style.value}>
-                        <div className={style.data}>
-                            {weatherServiceData?.weather?.main.feels_like}
-                        </div>
-                        <div className={style.detail}>
-                            &deg;C
+                <div className={style.primary}>
+                    <div className={style.temp}>
+                        <div className={style.value}>
+                            <div className={style.data}>
+                                {Math.round(weatherServiceData?.weather?.main.temp || 0)}
+                            </div>
+                            <div className={style.detail}>
+                                &deg;C
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div className={style.humidity}>
-                    <div className={style.label}>
-                        Humidity
-                    </div>
-                    <div className={style.value}>
-                        <div className={style.data}>
-                            {weatherServiceData?.weather?.main.humidity}
+                <div className={style.secondary}>
+                    <div className={style.feelslike}>
+                        <div className={style.label}>
+                            But you think it is
                         </div>
-                        <div className={style.detail}>
-                            / 100
+                        <div className={style.value}>
+                            <div className={style.data}>
+                                {Math.round(weatherServiceData?.weather?.main.feels_like || 0)}
+                            </div>
+                            <div className={style.detail}>
+                                &deg;C
+                            </div>
+                        </div>
+                    </div>
+                    <div className={style.humidity}>
+                        <div className={style.label}>
+                            And humidity is
+                        </div>
+                        <div className={style.value}>
+                            <div className={style.data}>
+                                {Math.round(weatherServiceData?.weather?.main.humidity || 0)}
+                            </div>
+                            <div className={style.detail}>
+                                %
+                            </div>
                         </div>
                     </div>
                 </div>
