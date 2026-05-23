@@ -1,3 +1,5 @@
+@import url(./css/fonts.css);
+
 :root{
     --element-space-1: 4px;
     --element-space-2: 8px;
@@ -26,10 +28,13 @@
     --font-weight-de: 500;
     --font-weight-n: 700;
     --font-weight-e: 900;
+
+    --font-redhat: 'RedHat';
 }
 
 *, *::before, *::after{
     box-sizing: border-box;
+    cursor: default;
 }
 
 html, body, #root {

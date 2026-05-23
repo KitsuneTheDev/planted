@@ -1,9 +1,9 @@
 .weatherContainer{
     padding:
         var(--element-space-1)
-        var(--element-space-3)
+        var(--component-space-3)
         var(--element-space-3) 
-        var(--element-space-3);
+        var(--component-space-3);
 }
 
 .weatherContainer.expanded{
@@ -13,12 +13,32 @@
 .weatherMain{
     display: grid;
     grid-template-areas: 
-        "temp feels hum";
+        "primary secondary";
+    grid-template-columns: auto 1fr;
     width: 100%;
 }
 
-.label{
-    padding-bottom: var(--element-space-1);
+.primary{
+    grid-area: primary;
+    font-family: var(--font-redhat);
+    font-weight: 700;
+    font-style: normal;
+    font-size: var(--font-size-6);
+}
+
+.secondary{
+    grid-area: secondary;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    font-family: var(--font-redhat);
+    font-weight: 400;
+    padding-left: var(--component-space-3);
+}
+
+.secondary>div{
+    display: flex;
+    gap: var(--element-space-1);
+    justify-content: flex-start;
 }
 
 .toggleContainer{
@@ -26,30 +46,15 @@
     display: flex;
     justify-content: center;
     padding-bottom: var(--element-space-1);
-}
-
-.weatherMain>div{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    font-family: var(--font-redhat);
+    font-weight: 500;
+    color: hsla(0, 0%, 0%, 0.50);
+    font-size: var(--font-size-2);
 }
 
 .value{
     display: flex;
     gap: var(--element-space-1);
-}
-
-.temp{
-    grid-area: temp;
-}
-
-.feelslike{
-    grid-area: feels;
-}
-
-.humidity{
-    grid-area: hum;
 }
 
 @media (min-width: 1000px) {
