@@ -77,4 +77,8 @@
     .toggleContainer{
         display: none;
     }
+
+    .weatherDetail{
+        grid-template-rows: 1fr;
+    }
 }
