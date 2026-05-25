@@ -4,10 +4,8 @@
         var(--component-space-3)
         var(--element-space-3) 
         var(--component-space-3);
-}
-
-.weatherContainer.expanded{
-    min-height: 300px;
+    min-height: 63px;
+    transition: min-height 300ms ease-out;
 }
 
 .weatherMain{
@@ -55,6 +53,20 @@
 .value{
     display: flex;
     gap: var(--element-space-1);
+}
+
+.weatherDetail{
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 300ms ease-out;
+}
+
+.collapsible__inner{
+    overflow: hidden;
+}
+
+.weatherDetail.expanded{
+    grid-template-rows: 1fr;
 }
 
 @media (min-width: 1000px) {
