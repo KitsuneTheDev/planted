@@ -23,7 +23,7 @@ export default function Weather(): ReactElement {
     }
 
     return(
-        <div className={`${style.weatherContainer}  ${isExpanded ? style.expanded : ''}`}>
+        <div className={`${style.weatherContainer} ${style.collapsible}  ${isExpanded ? style.expanded : ''}`}>
             <div className={`${style.toggleContainer}`} onClick={handleToggleClick}>
                 {isExpanded ? 'Hide Details' : 'See Details'}
             </div>
@@ -69,13 +69,13 @@ export default function Weather(): ReactElement {
                     </div>
                 </div>
             </div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div className={`${style.weatherDetail} ${isExpanded ? style.expanded : ''}`}>
+                <div className={style.collapsible__inner}>
+                    <div>This</div>
+                    <div>is</div>
+                    <div>details</div>
+                </div>
+            </div>
         </div>
     );
 }
