@@ -1,6 +1,7 @@
 import style from './Layout.module.css';
 import Dropdown from '../components/Dropdown';
 import Weather from '../features/weather/Weather';
+import { CircularProgress } from '../components/CircularProgress/CircularProgress';
 
 export default function Layout() {
 
@@ -27,7 +28,7 @@ export default function Layout() {
                 <div className={`${style.contentWrapper}`}>
                     <section aria-labelledby='plant-browser' className={`${style.plantBrowser}`}>
                         <h2 id="plant-browser">Browse Plants</h2>
-                        {/* <PlantBrowser /> */}
+                        <CircularProgress current={120} max={150} invert={true} />
                     </section>
                 </div>
             </main>
