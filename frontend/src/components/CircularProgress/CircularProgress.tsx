@@ -12,8 +12,7 @@ export function CircularProgress(props: {current: number, max: number, invert: b
         : colorRatio < 0.66 
         ? '#E6A817' 
         : '#2D8342';
-
-    console.log(offset);
+        
     return(
         <div className={style.viewboxWrapper}>
             <svg viewBox='0 0 100 100'>
