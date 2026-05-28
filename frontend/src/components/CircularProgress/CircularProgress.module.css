@@ -1,0 +1,13 @@
+.viewboxWrapper{
+    height: 100%;
+    width: 100%;
+}
+
+.circlePath{
+    stroke-width: 10px;
+}
+
+.placeholder{
+    stroke: rgb(206, 205, 205);
+    stroke-width: 10px;
+}
