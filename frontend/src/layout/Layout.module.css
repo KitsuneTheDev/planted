@@ -11,7 +11,7 @@
 
 header{
     grid-area: nav;
-    border: 1px solid black;
+    border-bottom: 2px solid rgb(185, 185, 185);
     display: grid;
     grid-template-areas: 
         "logo nav dropdown";
@@ -61,14 +61,14 @@ li:hover{
 aside{
     grid-area: aside;
     width: 100%;
-    border: 1px solid black;
+    border-bottom: 2px solid rgb(185, 185, 185);
     background-color: white;
 }
 
 main{
     grid-area: main;
     width: 100%;
-    border: 1px solid black;
+    border-bottom: 2px solid rgb(185, 185, 185);
 }
 
 @media (min-width: 1000px) {
