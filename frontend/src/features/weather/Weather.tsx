@@ -3,6 +3,8 @@ import { useEffect, useState, type ReactElement } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import type { AppDispatch, RootState } from '../../redux/store'
 import { getWeatherData } from '../../redux/slices/weatherServiceSlice';
+import { CustomGrid } from '../../components/CustomGrid/CustomGrid';
+import { CircularProgress } from '../../components/CircularProgress/CircularProgress';
 
 export default function Weather(): ReactElement {
 
@@ -12,7 +14,7 @@ export default function Weather(): ReactElement {
 
     useEffect(() => {
         dispatch(getWeatherData({lat: 40, lon: 50}));   
-    }, []);
+    }, [dispatch]);
 
     useEffect(() => {
         console.log(weatherServiceData);
@@ -71,9 +73,10 @@ export default function Weather(): ReactElement {
             </div>
             <div className={`${style.weatherDetail} ${isExpanded ? style.expanded : ''}`}>
                 <div className={style.collapsible__inner}>
-                    <div>This</div>
-                    <div>is</div>
-                    <div>details</div>
+                    <CustomGrid column={4}>
+                        <CircularProgress current={50} max={200} invert={false} label='quality' />
+                        <CircularProgress current={27} max={500} invert={true} label='co level' />
+                    </CustomGrid>
                 </div>
             </div>
         </div>

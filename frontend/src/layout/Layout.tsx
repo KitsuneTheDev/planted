@@ -26,8 +26,7 @@ export default function Layout() {
             <main role='main-content-display'>
                 <div className={`${style.contentWrapper}`}>
                     <section aria-labelledby='plant-browser' className={`${style.plantBrowser}`}>
-                        <h2 id="plant-browser">Browse Plants</h2>
-                    </section>
+                        <h2 id="plant-browser">Browse Plants</h2>                    </section>
                 </div>
             </main>
         </div>
