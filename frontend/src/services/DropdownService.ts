@@ -1,4 +1,4 @@
-import type { ApiResponse } from "../types/api.type";
+import type { ApiResponse } from "@planted/types/src/api.type";
 import type { DropdownData } from "@planted/types";
 import { ApiClient } from "./ApiClient";
 

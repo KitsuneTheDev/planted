@@ -6,10 +6,11 @@
 
 .circlePath{
     stroke-width: 10px;
+    transition: stroke-dashoffset 500ms ease-out;
 }
 
 .placeholder{
-    stroke: rgb(206, 205, 205);
+    stroke: #bac3cf;
     stroke-width: 10px;
 }
 
@@ -22,10 +23,11 @@
     font-size: var(--font-size-1);
     font-family: var(--font-redhat);
     font-weight: 600;
+    text-align: center;
 }
 
 .value{
-    position: absolute;
-    top: 50px;
-    color: rgb(121, 121, 121);
+    font-family: var(--font-redhat);
+    fill: var(--color-blue-1);
+    font-weight: 500;
 }

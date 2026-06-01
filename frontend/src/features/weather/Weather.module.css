@@ -2,7 +2,7 @@
     padding:
         var(--element-space-1)
         var(--component-space-3)
-        var(--element-space-3) 
+        0 
         var(--component-space-3);
     min-height: 63px;
     transition: min-height 300ms ease-out;
@@ -14,6 +14,7 @@
         "primary secondary";
     grid-template-columns: auto 1fr;
     width: 100%;
+    padding-bottom: var(--component-space-3);
 }
 
 .primary{
@@ -67,6 +68,7 @@
 
 .weatherDetail.expanded{
     grid-template-rows: 1fr;
+    border-top: 1px solid black
 }
 
 .weatherDetailWrapper{
