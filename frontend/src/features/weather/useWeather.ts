@@ -9,7 +9,7 @@ export function useWeather() {
     const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
     useEffect(() => {
-        dispatch(getWeatherData({lat: 40, lon: 50}));
+        dispatch(getWeatherData({lat: 28.6139, lon: 77.2090}));
     }, [dispatch]);
 
     const handleToggleClick = () => {

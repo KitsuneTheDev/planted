@@ -1,4 +1,4 @@
-import type { ApiResponse } from "../types/api.type.ts";
+import type { ApiResponse } from "@planted/types/src/api.type.js";
 
 export class ApiClient {
     #baseUrl: string;

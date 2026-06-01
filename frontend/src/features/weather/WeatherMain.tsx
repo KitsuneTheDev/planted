@@ -24,7 +24,7 @@ export function WeatherMain({ weatherServiceData }: WeatherMainProps) {
             <div className={style.secondary}>
                 <div className={style.feelslike}>
                     <div className={style.label}>
-                        But you think it is
+                        It feels like
                     </div>
                     <div className={style.value}>
                         <div className={style.data}>
@@ -37,7 +37,7 @@ export function WeatherMain({ weatherServiceData }: WeatherMainProps) {
                 </div>
                 <div className={style.humidity}>
                     <div className={style.label}>
-                        And humidity is
+                        It is humid as
                     </div>
                     <div className={style.value}>
                         <div className={style.data}>

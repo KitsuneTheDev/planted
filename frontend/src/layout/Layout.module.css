@@ -7,6 +7,7 @@
         "main"
         "aside";
     grid-template-rows: auto 1fr auto;
+    font-family: var(--font-redhat);
 }
 
 header{
@@ -32,18 +33,19 @@ header{
 
 nav{
     grid-area: nav;
-    font-size: var(--font-size-3);
+    font-size: var(--font-size-2);
 }
 
 nav ul{
     width: inherit;
-    height: inherit;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: var(--element-space-3);
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 li:hover{

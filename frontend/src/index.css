@@ -30,6 +30,22 @@
     --font-weight-e: 900;
 
     --font-redhat: 'RedHat';
+
+    --color-yellow-1: #fff59e;
+    --color-yellow-2: #fff8ba;
+    --color-yellow-2: #fffbd6;
+
+    --color-blue-1: #0d2b52;
+    --color-blue-2: #223958;
+    --color-blue-3: #334153;
+
+    --color-red-1: #e81900;
+    --color-red-2: #d65749;
+    --color-red-3: #da928b;
+
+    --color-green-1: #9cb29e;
+    --color-green-2: #7daa81;
+    --color-green-3: #5cb464;
 }
 
 *, *::before, *::after{

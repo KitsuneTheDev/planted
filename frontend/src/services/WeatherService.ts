@@ -1,7 +1,7 @@
 import type { WeatherCombined } from "@planted/types";
 import type { Coordinates } from "../types/common.type";
 import { ApiClient } from "./ApiClient";
-import type { ApiResponse } from "../types/api.type";
+import type { ApiResponse } from "@planted/types/src/api.type";
 
 export class WeatherService {
     private static client: ApiClient | null = null;

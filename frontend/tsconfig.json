@@ -50,5 +50,5 @@
     "moduleDetection": "force",
     "skipLibCheck": true,
   }, 
-  "include": ["src"]
+  "include": ["src", "../packages/types/src/api.type.ts"]
 }

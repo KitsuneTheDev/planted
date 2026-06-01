@@ -15,7 +15,7 @@ export default function Weather(): ReactElement {
                 {isExpanded ? 'Hide Details' : 'See Details'}
             </div>
             <WeatherMain weatherServiceData={weatherServiceData} />
-            <WeatherDetail isExpanded={isExpanded} />
+            <WeatherDetail isExpanded={isExpanded} weatherServiceData={weatherServiceData} />
         </div>
     );
 }
