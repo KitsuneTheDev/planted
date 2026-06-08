@@ -1,32 +1,37 @@
 import style from './Weather.module.css';
-import { CustomGrid } from '../../components/CustomGrid/CustomGrid';
-import { CircularProgress } from '../../components/CircularProgress/CircularProgress';
-import type { WeatherCombined } from '@planted/types';
-
 
 interface WeatherDetailProps {
-    isExpanded: boolean;
-    weatherServiceData: WeatherCombined | null;
+    humidity: string;
+    feels: string;
+    wind: string;
+    aqi: string;
 }
 
-export function WeatherDetail({ isExpanded, weatherServiceData }: WeatherDetailProps) {
+export function WeatherDetail( props: WeatherDetailProps) {
 
-    const qualityData = weatherServiceData?.quality?.list[0]?.components;
-
+    // const qualityData = weatherServiceData?.quality?.list[0]?.components;
+    console.log(props);
+    const propLength: number = Object.keys(props).length || 0; 
     return(
-        <div className={`${style.weatherDetail} ${isExpanded ? style.expanded : ''}`}>
-            <div className={style.collapsible__inner}>
-                <CustomGrid column={4}>
-                    <CircularProgress current={Math.round(Number(qualityData?.co))} max={700} invert={true} label='Carbon Monoxide' />
-                    <CircularProgress current={Math.round(Number(qualityData?.nh3))} max={10} invert={true} label='Ammonia' />
-                    <CircularProgress current={Math.round(Number(qualityData?.no))} max={10} invert={true} label='Nitrogen Monoxide' />
-                    <CircularProgress current={Math.round(Number(qualityData?.no2))} max={10} invert={true} label='Nitrogen Dioxide' />
-                    <CircularProgress current={Math.round(Number(qualityData?.o3))} max={60} invert={true} label='Ozone' />
-                    <CircularProgress current={Math.round(Number(qualityData?.pm2_5))} max={5} invert={true} label='Fine Particles' />
-                    <CircularProgress current={Math.round(Number(qualityData?.pm10))} max={15} invert={true} label='Coarse Particles' />
-                    <CircularProgress current={Math.round(Number(qualityData?.so2))} max={15} invert={true} label='Sulphur Dioxide' />
-                </CustomGrid>
-            </div>
-        </div>    
+        <div className={style.detailWrapper}>
+            {   
+                Object.entries(props).map((prop, index) => {
+                    const isLast = propLength === index ? true : false;
+                    return(
+                        <div key={index} className={`${style.mapWrapper} ${isLast ?? style.last}`}>
+                            <div className={style.head}>
+                                <div className={style.label}>
+                                    {`${prop[0][0]?.toUpperCase()}${prop[0].slice(1)}`}
+                                </div>
+                            </div>
+                            <div className={style.main}>
+                                <div className={style.value}>{(prop[1])}</div>
+                                <div className={style.detail}></div>
+                            </div>
+                        </div>
+                    )
+                })
+            }
+        </div>
     );
 }
