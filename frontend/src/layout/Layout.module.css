@@ -3,89 +3,59 @@
     height: 100%;
     display: grid;
     grid-template-areas: 
-        "nav"
-        "main"
-        "aside";
-    grid-template-rows: auto 1fr auto;
+        "header"
+        "main";
+    grid-template-rows: auto 1fr;
     font-family: var(--font-redhat);
 }
 
 header{
-    grid-area: nav;
-    border-bottom: 2px solid rgb(185, 185, 185);
-    display: grid;
-    grid-template-areas: 
-        "logo nav dropdown";
-    padding: var(--element-space-3) var(--element-space-3);
-}
-
-.logoContainer{
-    grid-area: logo;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.logoContainer h1{
-    font-size: var(--font-size-5);
-    font-weight: var(--font-weight-e);
-}
-
-nav{
-    grid-area: nav;
-    font-size: var(--font-size-2);
-}
-
-nav ul{
+    grid-area: header;
+    padding: 0 var(--layout-space-1);
     width: inherit;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--element-space-3);
-    list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
-li:hover{
-    cursor: pointer;
-}
-
-.dropdownContainer{
-    grid-area: dropdown;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    font-size: var(--font-size-3);
-}
-
-aside{
-    grid-area: aside;
-    width: 100%;
-    border-bottom: 2px solid rgb(185, 185, 185);
-    background-color: white;
+header h1{
+    font-size: var(--font-size-5);
+    font-family: var(--font-redhat);
+    font-weight: 700;
 }
 
 main{
     grid-area: main;
     width: 100%;
+    padding: 0 var(--layout-space-1);
     border-bottom: 2px solid rgb(185, 185, 185);
 }
 
+.contentWrapper{  
+    margin: 0;
+    border: 1px solid black;
+    background-color: bisque;
+    border-top: none;
+    border-bottom: none;
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: var(--element-space-3) 0;
+}
+
 @media (min-width: 1000px) {
-    .layoutContainer{
-        grid-template-areas: 
-            "nav nav"
-            "aside main";
-        grid-template-columns: 320px 1fr;
+    header{
+        padding: 0 var(--section-space-3);
     }
 
-    header{
-        padding: var(--element-space-3) var(--layout-space-3);
+    main{
+        padding: 0 var(--section-space-3);
     }
 
     nav ul{
         gap: var(--layout-space-3);
+    }
+
+    .contentWrapper{
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--element-space-3);
     }
 }

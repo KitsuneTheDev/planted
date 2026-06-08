@@ -3,19 +3,25 @@ import type { ReactElement } from "react";
 import { WeatherDetail } from './WeatherDetail';
 import { useWeather } from './useWeather';
 import { WeatherMain } from './WeatherMain';
-
+import { aqiMap } from '../../constants/aqiMap';
+import Dropdown from '../../components/Dropdown';
 
 export default function Weather(): ReactElement {
 
-    const { isExpanded, handleToggleClick, weatherServiceData } = useWeather();
-
+    const { weatherServiceData } = useWeather();
+    console.log(weatherServiceData);
     return(
-        <div className={`${style.weatherContainer} ${style.collapsible}  ${isExpanded ? style.expanded : ''}`}>
-            <div className={`${style.toggleContainer}`} onClick={handleToggleClick}>
-                {isExpanded ? 'Hide Details' : 'See Details'}
+        <div className={`${style.contentWrapper}`}>
+            <div className={style.locationWrapper}>
+                <Dropdown />
             </div>
-            <WeatherMain weatherServiceData={weatherServiceData} />
-            <WeatherDetail isExpanded={isExpanded} weatherServiceData={weatherServiceData} />
+            <WeatherMain temp={Math.round(weatherServiceData?.weather?.main.temp || 0)} />
+            <WeatherDetail
+                humidity={`${Math.round(weatherServiceData?.weather?.main.humidity || 0)} %`}
+                feels={`${Math.round(weatherServiceData?.weather?.main.feels_like || 0)} °C`}
+                wind={`${Math.round(weatherServiceData?.weather?.wind.speed || 0)} km/h`}
+                aqi={`${aqiMap[weatherServiceData?.quality?.list[0]?.main.aqi]}`}
+            />
         </div>
     );
 }

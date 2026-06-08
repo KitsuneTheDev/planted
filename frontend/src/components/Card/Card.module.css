@@ -1,0 +1,19 @@
+.cardWrapper{
+    max-height: calc((100dvh - var(--header-height)) / 2);
+    overflow-y: scroll;
+    padding: var(--element-space-2);
+    max-width: 100%;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 1em;
+}
+
+.cardWrapper::-webkit-scrollbar{
+    display: none;
+}
+
+@media(min-width: 1000px){
+    .cardWrapper{
+        max-height: calc((100dvh - var(--header-height)) / 1.6);
+    }
+}
