@@ -11,9 +11,18 @@
 }
 
 input{
-    width: 100px;
+    border: none;
+    font-family: var(--font-redhat);
+    font-size: var(--font-size-2);
+    font-weight: 500;
 }
 
 input::placeholder{
-    text-align: center;
+    text-align: start;
+    color: black;
+}
+
+input:focus{
+    outline: none;
+    border-bottom: 1px solid black;
 }
