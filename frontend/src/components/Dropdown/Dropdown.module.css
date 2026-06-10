@@ -18,11 +18,11 @@ input{
 }
 
 input::placeholder{
-    text-align: start;
+    text-align: left;
     color: black;
 }
 
 input:focus{
-    outline: none;
-    border-bottom: 1px solid black;
+    outline: 1px solid black;
+    border-radius: 0.2rem;
 }
