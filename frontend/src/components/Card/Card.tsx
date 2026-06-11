@@ -3,12 +3,11 @@ import type { ReactNode } from "react";
 
 interface CardProps{
     children: ReactNode;
-    size: number;
 }
 
-export default function Card({children, size}: CardProps) {
+export default function Card({children}: CardProps) {
     return(
-        <div className={style.cardWrapper} style={{gridColumn: `span ${size}`}}>
+        <div className={style.cardWrapper}>
             {children}
         </div>
     );

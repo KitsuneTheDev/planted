@@ -7,17 +7,17 @@
     --element-space-2: 8px;
     --element-space-3: 12px;
 
-    --component-space-1: 16px;
-    --component-space-2: 20px;
-    --component-space-3: 24px;
+    --component-space-1: 8px;
+    --component-space-2: 12px;
+    --component-space-3: 16px;
 
-    --layout-space-1: 32px;
-    --layout-space-2: 40px;
-    --layout-space-3: 48px;
+    --layout-space-1: 8px;
+    --layout-space-2: 12px;
+    --layout-space-3: 16px;
 
-    --section-space-1: 64px;
-    --section-space-2: 80px;
-    --section-space-3: 96px;
+    --section-space-1: 16px;
+    --section-space-2: 20px;
+    --section-space-3: 24px;
 
     --font-size-1: 12px;
     --font-size-2: 14px;
@@ -32,9 +32,46 @@
     --font-weight-e: 900;
 
     --font-redhat: 'RedHat';
+
+    /** Theme primary colors */
+    --color-theme-primary-1: #ff8f57;
+    --color-theme-primary-2: #ff9b6a;
+    --color-theme-primary-3: #ffa77b;
+    --color-theme-primary-4: #ffb28c;
+
+    /** Theme background colors */
+    --color-theme-background-1: #0a0a0a;
+    --color-theme-background-2: #1d1d1d;
+    --color-theme-background-3: #323232;
+
+    /** Theme surface colors */
+    --color-theme-surface-1: #1e1512;
+    --color-theme-surface-2: #312825;
+    --color-theme-surface-3: #453c39;
+
+    /** Success colors */
+    --color-success-1: #42ff58;
+    --color-success-2: #7cff82;
+    --color-success-3: #a3ffa4;
+
+    /** Warning colors */
+    --color-warning-1: #ffcf57;
+    --color-warning-2: #ffd980;
+    --color-warning-3: #ffe3a3;
+
+    /** Danger colors */
+    --color-danger-1: #ff4f4f;
+    --color-danger-2: #ff7a73;
+    --color-danger-3: #ff9e96;
+
+    /** Info colors */
+    --color-info-1: #63f2ff;
+    --color-info-2: #8df5ff;
+    --color-info-3: #aef8ff;
 }
 
 *, *::before, *::after{
+    color: white;
     box-sizing: border-box;
     cursor: default;
     margin: 0;
@@ -42,6 +79,7 @@
 }
 
 html, body, #root {
+    background-color: #0a0a0a;
     width: 100%;
     height: 100%;
     padding: 0;

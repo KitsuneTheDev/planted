@@ -4,7 +4,6 @@ import { WeatherDetail } from './WeatherDetail';
 import { useWeather } from './useWeather';
 import { WeatherMain } from './WeatherMain';
 import { aqiMap } from '../../constants/aqiMap';
-import Dropdown from '../../components/Dropdown';
 
 export default function Weather(): ReactElement {
 
@@ -12,9 +11,6 @@ export default function Weather(): ReactElement {
     console.log(weatherServiceData);
     return(
         <div className={`${style.contentWrapper}`}>
-            <div className={style.locationWrapper}>
-                <Dropdown />
-            </div>
             <WeatherMain temp={Math.round(weatherServiceData?.weather?.main.temp || 0)} />
             <WeatherDetail
                 humidity={`${Math.round(weatherServiceData?.weather?.main.humidity || 0)} %`}

@@ -1,4 +1,5 @@
 .layoutContainer{
+    background-color: var(--color-theme-background-1);
     width: 100%;
     height: 100%;
     display: grid;
@@ -9,13 +10,19 @@
     font-family: var(--font-redhat);
 }
 
+.layoutContainer>*{
+    padding-bottom: var(--section-space-1);
+}
+
 header{
     grid-area: header;
-    padding: 0 var(--layout-space-1);
+    padding: 0 var(--layout-space-3);
+    padding-top: var(--layout-space-1);
     width: inherit;
 }
 
 header h1{
+    color: var(--color-theme-primary-1);
     font-size: var(--font-size-5);
     font-family: var(--font-redhat);
     font-weight: 700;
@@ -25,13 +32,10 @@ main{
     grid-area: main;
     width: 100%;
     padding: 0 var(--layout-space-1);
-    border-bottom: 2px solid rgb(185, 185, 185);
 }
 
 .contentWrapper{  
     margin: 0;
-    border: 1px solid black;
-    background-color: bisque;
     border-top: none;
     border-bottom: none;
     min-height: 100%;
