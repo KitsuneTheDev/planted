@@ -4,7 +4,7 @@ interface WeatherMainProps {
     temp: number;
 }
 
-export function WeatherMain({ temp }: WeatherMainProps) {
+export default function WeatherMain({ temp }: WeatherMainProps) {
 
     return(
         <div className={style.mainWrapper}>

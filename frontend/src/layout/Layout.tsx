@@ -2,6 +2,7 @@ import style from './Layout.module.css';
 import Weather from '../features/weather/Weather';
 import Card from '../components/Card/Card';
 import Dropdown from '../components/Dropdown/Dropdown';
+import Row from '../components/Row/Row';
 
 export default function Layout() {
 
@@ -13,7 +14,9 @@ export default function Layout() {
             <main role='main-content-display'>
                 <div className={style.contentWrapper}>
                     <Card>
-                        <Dropdown />
+                        <Row>
+                            <Dropdown />
+                        </Row>
                         <Weather />
                     </Card>
                 </div>

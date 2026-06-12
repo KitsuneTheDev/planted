@@ -1,14 +1,5 @@
 .contentWrapper{
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto;
-}
-
-.locationWrapper{
-    grid-column: 1 / -1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    width: 100%;
 }
 
 /* WEATHER MAIN STARTS */

@@ -7,7 +7,7 @@ interface RowProps{
 
 export default function Row({children}: RowProps) {
     return(
-        <div className={style.cardWrapper}>
+        <div className={style.rowWrapper}>
             {children}
         </div>
     );

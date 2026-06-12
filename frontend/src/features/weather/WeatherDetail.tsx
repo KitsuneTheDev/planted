@@ -8,7 +8,7 @@ interface WeatherDetailProps {
     aqi: string;
 }
 
-export function WeatherDetail( props: WeatherDetailProps) {
+export default function WeatherDetail( props: WeatherDetailProps) {
 
     // const qualityData = weatherServiceData?.quality?.list[0]?.components; 
     return(
