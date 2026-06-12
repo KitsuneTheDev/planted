@@ -49,6 +49,9 @@
     --color-theme-surface-2: #312825;
     --color-theme-surface-3: #453c39;
 
+    --color-text-primary: white;
+    --color-text-secondary: rgb(187, 183, 181);
+
     /** Success colors */
     --color-success-1: #42ff58;
     --color-success-2: #7cff82;

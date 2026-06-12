@@ -1,3 +1,4 @@
+import Card from '../../components/Card/Card';
 import style from './Weather.module.css';
 
 interface WeatherDetailProps {
@@ -9,29 +10,27 @@ interface WeatherDetailProps {
 
 export function WeatherDetail( props: WeatherDetailProps) {
 
-    // const qualityData = weatherServiceData?.quality?.list[0]?.components;
-    console.log(props);
-    const propLength: number = Object.keys(props).length || 0; 
+    // const qualityData = weatherServiceData?.quality?.list[0]?.components; 
     return(
-        <div className={style.detailWrapper}>
+        <>
             {   
                 Object.entries(props).map((prop, index) => {
-                    const isLast = propLength === index ? true : false;
                     return(
-                        <div key={index} className={`${style.mapWrapper} ${isLast ?? style.last}`}>
-                            <div className={style.head}>
-                                <div className={style.label}>
-                                    {`${prop[0][0]?.toUpperCase()}${prop[0].slice(1)}`}
+                        <Card key={index}>
+                            <div className={style.detailWrapper}>
+                                <div className={style.detailHeader}>
+                                    <div className={style.headerIcon}></div>
+                                    <div className={style.headerLabel}>{prop[0]}</div>
+                                </div>
+                                <div className={style.detailContent}>
+                                    <div className={style.contentValue}></div>
+                                    <div className={style.contentDetail}></div>
                                 </div>
                             </div>
-                            <div className={style.main}>
-                                <div className={style.value}>{(prop[1])}</div>
-                                <div className={style.detail}></div>
-                            </div>
-                        </div>
+                        </Card>
                     )
                 })
             }
-        </div>
+        </>
     );
 }
