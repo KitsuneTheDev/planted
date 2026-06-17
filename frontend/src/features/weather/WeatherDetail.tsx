@@ -1,5 +1,5 @@
 import Card from '../../components/Card/Card';
-import style from './Weather.module.css';
+import style from './WeatherDetail.module.css';
 
 interface WeatherDetailProps {
     humidity: string;

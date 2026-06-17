@@ -1,4 +1,5 @@
-export const aqiMap = {
+export const aqiMap: Record<number, string> = {
+    0: "No data",
     1: "Very Good",
     2: "Good",
     3: "Normal",

@@ -1,0 +1,7 @@
+.mainWrapper{
+    display: flex;
+    gap: var(--element-space-1);
+    font-size: var(--font-size-6);
+    font-family: var(--font-redhat);
+    font-weight: 500;
+}

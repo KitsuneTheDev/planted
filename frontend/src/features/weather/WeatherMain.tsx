@@ -1,4 +1,4 @@
-import style from './Weather.module.css';
+import style from './WeatherMain.module.css';
 
 interface WeatherMainProps {
     temp: number;
