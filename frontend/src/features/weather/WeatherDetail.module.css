@@ -1,6 +1,29 @@
 .detailWrapper{
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     min-width: 0;
+}
+
+.detailHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--font-size-3);
+}
+
+.detailHeader>div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding-right: var(--element-space-1);
+}
+
+.detailHeader svg{
+    width: 1em;
+    height: 1em;
+    display: block;
+    transform: translateY(-0.05em);
 }

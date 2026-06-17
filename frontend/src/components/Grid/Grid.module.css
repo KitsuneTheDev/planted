@@ -10,7 +10,7 @@
     background-color: var(--color-theme-background-2);
 }
 
-@media(min-width: 500px) {
+@media(min-width: 580px) {
     .gridWrapper{
         grid-template-columns: repeat(4, 1fr);
     }

@@ -7,17 +7,17 @@
     --element-space-2: 8px;
     --element-space-3: 12px;
 
-    --component-space-1: 8px;
-    --component-space-2: 12px;
-    --component-space-3: 16px;
+    --component-space-1: 16px;
+    --component-space-2: 20px;
+    --component-space-3: 24px;
 
-    --layout-space-1: 8px;
-    --layout-space-2: 12px;
-    --layout-space-3: 16px;
+    --layout-space-1: 32px;
+    --layout-space-2: 40px;
+    --layout-space-3: 48px;
 
-    --section-space-1: 16px;
-    --section-space-2: 20px;
-    --section-space-3: 24px;
+    --section-space-1: 56px;
+    --section-space-2: 74px;
+    --section-space-3: 90px;
 
     --font-size-1: 12px;
     --font-size-2: 14px;
@@ -91,4 +91,16 @@ html, body, #root {
 
 h1, h2, h3, h4, h5, h6{
     margin: 0;
+}
+
+@media (min-width: 1000px) {
+    :root{
+        --font-size-1: 12px;
+        --font-size-2: 16px;
+        --font-size-3: 20px;
+        --font-size-4: 28px;
+        --font-size-5: 36px;
+        --font-size-6: 48px;
+        --font-size-7: 64px;
+    }
 }

@@ -1,11 +1,11 @@
 .cardWrapper{
     width: 100%;
+    min-height: 58px;
     display: flex;
     flex-direction: column;
     height: fit-content;
-    max-height: calc((100dvh - var(--header-height)) / 2);
     overflow-y: scroll;
-    padding: var(--element-space-2);
+    padding: var(--component-space-1);
     background-color: var(--color-theme-background-3);
     border-radius: 0.5em;
 }

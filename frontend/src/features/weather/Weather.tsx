@@ -9,6 +9,7 @@ import QualityDetail from './QualityDetail';
 import DayTime from './DayTime';
 import Grid from '../../components/Grid/Grid';
 import Row from '../../components/Row/Row';
+import { CircleGauge, Droplet, Eye, Wind } from 'lucide-react';
 
 export default function Weather(): ReactElement {
 
@@ -21,11 +22,30 @@ export default function Weather(): ReactElement {
             </Row>
             <hr />
             <Grid>
-                <WeatherDetail
-                    humidity={`${Math.round(weatherServiceData?.weather?.main.humidity || 0)} %`}
-                    feels={`${Math.round(weatherServiceData?.weather?.main.feels_like || 0)} °C`}
-                    wind={`${Math.round(weatherServiceData?.weather?.wind.speed || 0)} km/h`}
-                    aqi={`${aqiMap[weatherServiceData?.quality?.list[0]?.main.aqi || 0]}`}
+                <WeatherDetail 
+                    humidity = {{
+                        label: 'Humidity',
+                        value: `${Math.round(weatherServiceData?.weather?.main.humidity || 0)} %`,
+                        icon: <Droplet />
+                    }}
+
+                    wind = {{
+                        label: 'Wind',
+                        value: `${weatherServiceData?.weather?.wind.speed || 0} m/s`,
+                        icon: <Wind />
+                    }}
+
+                    pressure = {{
+                        label: 'Pressure',
+                        value: `${weatherServiceData?.weather?.main.pressure || 0} hPa`,
+                        icon: <CircleGauge />
+                    }}
+
+                    visibility = {{
+                        label: 'Visibility',
+                        value: `${Math.round((weatherServiceData?.weather?.visibility || 0) / 1000)} km`,
+                        icon: <Eye />
+                    }}
                 />
             </Grid>
             <hr />

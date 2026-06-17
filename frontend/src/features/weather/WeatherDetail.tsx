@@ -1,30 +1,31 @@
+import type { ReactNode } from 'react';
 import Card from '../../components/Card/Card';
 import style from './WeatherDetail.module.css';
 
 interface WeatherDetailProps {
-    humidity: string;
-    feels: string;
-    wind: string;
-    aqi: string;
+    label: string;
+    value: string;
+    icon: ReactNode;
 }
 
-export default function WeatherDetail( props: WeatherDetailProps) {
+export default function WeatherDetail( props: Record<string, WeatherDetailProps>) {
 
-    // const qualityData = weatherServiceData?.quality?.list[0]?.components; 
     return(
         <>
             {   
                 Object.entries(props).map((prop, index) => {
+
+                    const data: WeatherDetailProps = prop[1];
+
                     return(
                         <Card key={index}>
                             <div className={style.detailWrapper}>
                                 <div className={style.detailHeader}>
-                                    <div className={style.headerIcon}></div>
-                                    <div className={style.headerLabel}>{prop[0]}</div>
+                                    <div className={style.headerIcon}>{data.icon}</div>
+                                    <div className={style.headerLabel}>{data.label}</div>
                                 </div>
                                 <div className={style.detailContent}>
-                                    <div className={style.contentValue}></div>
-                                    <div className={style.contentDetail}></div>
+                                    <div className={style.contentValue}>{data.value}</div>
                                 </div>
                             </div>
                         </Card>

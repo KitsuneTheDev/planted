@@ -1,10 +1,11 @@
 .contentWrapper>div{
     width: 100%;
-    padding: var(--element-space-2) 0;
+    padding-bottom: var(--element-space-2);
 }
 
 .contentWrapper hr{
     height: 2px;
     background-color: gray;
     border-color: gray;
+    margin-bottom: var(--element-space-2);
 }
