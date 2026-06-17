@@ -7,7 +7,6 @@
     overflow-y: scroll;
     padding: var(--element-space-2);
     background-color: var(--color-theme-background-3);
-    border: 1px solid black;
     border-radius: 0.5em;
 }
 
