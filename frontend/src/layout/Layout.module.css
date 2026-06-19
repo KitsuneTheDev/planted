@@ -63,7 +63,8 @@ main{
     }
 
     .contentWrapper{
-        grid-template-columns: repeat(3, 1fr);
-        gap: var(--element-space-3);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--section-space-1);
     }
 }

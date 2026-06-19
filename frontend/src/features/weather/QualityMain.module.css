@@ -10,14 +10,20 @@
 
 .mainWrapper{
     display: flex;
+    justify-content: space-between;
 }
 
 .aqiMap{
    width: 100%;
+   max-width: 650px;
    padding-right: var(--element-space-3);
    display: flex;
    justify-content: center;
    align-items: center;
+}
+
+.aqiMap svg>*{
+    vector-effect: non-scaling-stroke;
 }
 
 .aqiMain{

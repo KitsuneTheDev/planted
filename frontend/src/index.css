@@ -71,6 +71,12 @@
     --color-info-1: #63f2ff;
     --color-info-2: #8df5ff;
     --color-info-3: #aef8ff;
+
+    /** ANIMATIONS */
+
+    /** Cubic Bezier */
+    --transiton-smooth: cubic-bezier(0.4, 0, 0.2, 1) 0.25s;
+    --transiton-smooth: cubic-bezier(0.4, 0, 0.2, 1) 0.15s;
 }
 
 *, *::before, *::after{
