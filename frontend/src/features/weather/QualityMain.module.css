@@ -14,12 +14,58 @@
 }
 
 .aqiMap{
+    position: relative;
    width: 100%;
    max-width: 650px;
    padding-right: var(--element-space-3);
    display: flex;
    justify-content: center;
    align-items: center;
+}
+
+.aqiMapInner{
+    width: 100%;
+    height: 10px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4px;
+}
+
+.aqiMapInner>div:nth-child(1){
+    background-color: #42ff58;
+}
+
+.aqiMapInner>div:nth-child(2){
+    background-color: #ffdc42;
+}
+
+.aqiMapInner>div:nth-child(3){
+    background-color: #ff8e42;
+}
+
+.aqiMapInner>div:nth-child(4){
+    background-color: #ff5842;
+}
+
+.aqiMapInner>div:nth-child(5){
+    background-color: #521515;
+}
+
+.aqiMapInner>div{
+    border-radius: 1rem;
+    border: 1px solid black;
+}
+
+.aqiMap>.marker{
+    position: absolute;
+    display: inline-block;
+    border-radius: 50%;
+    border: 2px solid black;
+    background-color: white;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    transform: translate(-50%, -50%);
 }
 
 .aqiMap svg>*{
