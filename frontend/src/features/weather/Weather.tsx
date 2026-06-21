@@ -9,12 +9,21 @@ import QualityDetail from './QualityDetail';
 import DayTime from './DayTime';
 import Grid from '../../components/Grid/Grid';
 import Row from '../../components/Row/Row';
-import { CircleGauge, Droplet, Eye, Wind } from 'lucide-react';
+import { CircleGauge, Droplet, Eye, Sunrise, Sunset, Wind } from 'lucide-react';
+import dayjs from 'dayjs';
 
 export default function Weather(): ReactElement {
 
     const { weatherServiceData } = useWeather();
     console.log(weatherServiceData);
+    const timezone = weatherServiceData?.weather?.timezone;
+    const sunriseStamp = weatherServiceData?.weather?.sys.sunrise;
+    const sunsetStamp = weatherServiceData?.weather?.sys.sunset;
+    const daytimeData = {
+        sunrise: timezone && sunriseStamp ? dayjs((sunriseStamp + timezone) * 1_000).format('HH:MM') : 'No sunrise data',
+        sunset: timezone && sunsetStamp ? dayjs((sunsetStamp + timezone) * 1_000).format('HH:MM') : 'No sunset data', 
+    }
+
     return(
         <div className={style.contentWrapper}>
             <Row>
@@ -57,9 +66,9 @@ export default function Weather(): ReactElement {
                 <QualityDetail />
             </Grid>
             <hr />
-            <Grid>
-                <DayTime />
-            </Grid>
+            <Row>
+                <DayTime sunRise={{value: daytimeData.sunrise, icon: <Sunrise color='#ffcf57' />}} sunSet={{value: daytimeData.sunset, icon: <Sunset color='#ff4f4f' />}} />
+            </Row>
         </div>
     );
 }
