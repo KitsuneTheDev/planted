@@ -24,6 +24,12 @@ export default function Weather(): ReactElement {
         sunset: timezone && sunsetStamp ? dayjs((sunsetStamp + timezone) * 1_000).format('HH:MM') : 'No sunset data', 
     }
 
+    const qualityDetail = {
+        pm2_5: {label: 'PM2.5', value: weatherServiceData?.quality?.list[0]?.components.pm2_5 || 'No data', unit: 'µg/m³'},
+        pm10: {label: 'PM10', value: weatherServiceData?.quality?.list[0]?.components.pm10 || 'No data', unit: 'µg/m³'},
+        no2: {label: 'NO₂', value: weatherServiceData?.quality?.list[0]?.components.no2 || 'No data', unit: 'µg/m³'}
+    }
+
     return(
         <div className={style.contentWrapper}>
             <Row>
@@ -61,10 +67,10 @@ export default function Weather(): ReactElement {
             <Row>
                 <QualityMain aqi={weatherServiceData?.quality?.list[0]?.main.aqi || 0} aqiDetail={aqiMap[weatherServiceData?.quality?.list[0]?.main.aqi || 0]} />
             </Row>
-            <hr />
-            <Grid>
-                <QualityDetail />
-            </Grid>
+            <hr className={style.optionalHr} />
+            <Row>
+                <QualityDetail pm2_5={qualityDetail.pm2_5} pm10={qualityDetail.pm10} no2={qualityDetail.no2} />
+            </Row>
             <hr />
             <Row>
                 <DayTime sunRise={{value: daytimeData.sunrise, icon: <Sunrise color='#ffcf57' />}} sunSet={{value: daytimeData.sunset, icon: <Sunset color='#ff4f4f' />}} />

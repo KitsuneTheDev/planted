@@ -1,0 +1,23 @@
+.contentWrapper{
+    display: none;
+    width: inherit;
+    justify-content: space-between;
+    gap: var(--element-space-2);
+    font-family: var(--font-redhat);
+}
+
+.contentCardHead{
+    padding-bottom: var(--element-space-2);
+    color: var(--color-text-secondary);
+}
+
+.contentCardMain{
+    display: flex;
+    gap: var(--element-space-2);
+}
+
+@media(min-width: 600px){
+    .contentWrapper{
+        display: flex;
+    }
+}

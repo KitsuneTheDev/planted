@@ -9,3 +9,13 @@
     border-color: gray;
     margin-bottom: var(--element-space-2);
 }
+
+.optionalHr{
+    display: none;
+}
+
+@media(min-width: 600px){
+    .optionalHr{
+        display: block;
+    }
+}
