@@ -13,8 +13,12 @@
     justify-content: space-between;
 }
 
+.header{
+    color: var(--color-text-secondary);
+}
+
 .aqiMap{
-    position: relative;
+   position: relative;
    width: 100%;
    max-width: 650px;
    padding-right: var(--element-space-3);
@@ -85,5 +89,9 @@
 .mainContext{
     color: var(--color-theme-primary-1);
     font-size: var(--font-size-5);
-    transform: translateY(2px);
+    transform: translateY(8%);
+}
+
+.mainDetail{
+    color: var(--color-text-secondary);
 }

@@ -41,25 +41,25 @@ export default function Weather(): ReactElement {
                     humidity = {{
                         label: 'Humidity',
                         value: `${Math.round(weatherServiceData?.weather?.main.humidity || 0)} %`,
-                        icon: <Droplet />
+                        icon: <Droplet color='#bbb7b5' />
                     }}
 
                     wind = {{
                         label: 'Wind',
                         value: `${weatherServiceData?.weather?.wind.speed || 0} m/s`,
-                        icon: <Wind />
+                        icon: <Wind color='#bbb7b5' />
                     }}
 
                     pressure = {{
                         label: 'Pressure',
                         value: `${weatherServiceData?.weather?.main.pressure || 0} hPa`,
-                        icon: <CircleGauge />
+                        icon: <CircleGauge color='#bbb7b5' />
                     }}
 
                     visibility = {{
                         label: 'Visibility',
                         value: `${Math.round((weatherServiceData?.weather?.visibility || 0) / 1000)} km`,
-                        icon: <Eye />
+                        icon: <Eye color='#bbb7b5' />
                     }}
                 />
             </Grid>
