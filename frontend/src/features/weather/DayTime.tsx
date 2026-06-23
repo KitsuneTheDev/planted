@@ -12,7 +12,6 @@ export default function DayTime(props: Record<string, DayTimeProps>) {
         <div className={style.daytimeWrapper}>
             {
                 Object.entries(props).map((prop, index) => {
-                    console.log(prop);
                     return(
                         <Card key={index} dark={true}>
                             <div className={style.daytimeCardWrapper}>

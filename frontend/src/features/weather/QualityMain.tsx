@@ -9,7 +9,6 @@ export default function QualityMain({aqi, aqiDetail}: QualityMainProps){
 
     const barLength = ((aqi - 1) * 20) + 10;
     const markerPosition = `calc(${barLength}% - 4.5px)`;
-    console.log(markerPosition);
 
     return(
         <div className={style.contextWrapper}>

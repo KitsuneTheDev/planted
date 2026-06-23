@@ -1,10 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { WeatherService } from '../../services/WeatherService';
-import type { WeatherCombined } from "@planted/types";
+import type { Weather } from "@planted/types";
 import type { Coordinates } from "../../types/common.type";
 
 export interface weatherState {
-    weatherServiceData: WeatherCombined | null,
+    weatherServiceData: Weather | null,
     weatherServiceDataLoading: boolean,
     weatherServiceDataError: string | null,
 }
