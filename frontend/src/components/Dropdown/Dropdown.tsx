@@ -3,7 +3,7 @@ import { useDropdown } from './useDropdown';
 
 export default function Dropdown() {
 
-    const { dropdownData, handleDropdownChange } = useDropdown();
+    const { dropdownData, handleDropdownChange, handleOptionClick } = useDropdown();
 
     return (
         <div className={`${style.dropdownOuter}`}>
@@ -12,9 +12,11 @@ export default function Dropdown() {
             </div>
             <div className={`${style.dropdownDisplay} ${dropdownData.length === 0 ? style.hidden : null}`}>
                 {dropdownData.map((data, index) => {
+
                     return (
-                    <div className={`${style.dataElement}`} key={index}>
-                        {data.city}
+                    <div className={`${style.dataElement}`} key={index}  onClick={() => handleOptionClick({lat: data.lat, lon: data.lon})}>
+                        <div className={style.city}>{data.city[0]?.toUpperCase() + data.city.slice(1)}</div>
+                        <div className={style.country}>{data.country.toUpperCase()}</div>
                     </div>
                 )
                 })}

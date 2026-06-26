@@ -1,6 +1,6 @@
 export interface DropdownData {
     city: string;
     country: string;
-    longitude: number;
-    latitude: number;
+    lon: number;
+    lat: number;
 }
