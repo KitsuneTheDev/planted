@@ -8,10 +8,14 @@ import { initModels, sequelize } from "../config";
 const CHUNK_SIZE: number = 1000;
 
 interface cityRow {
-    Country: string;
-    City: string;
-    Longitude: number;
-    Latitude: number;
+    country: string;
+    city: string;
+    lng: number;
+    lat: number;
+    iso2: string;
+    iso3: string;
+    admin_name: string;
+
 }
 
 initModels();
@@ -25,10 +29,13 @@ async function seedCity() {
             .pipe(csv())
             .on('data', (row: cityRow) => {
                 rows.push({
-                    country: row.Country,
-                    city: row.City,
-                    lon: row.Longitude,
-                    lat: row.Latitude,
+                    country: row.country,
+                    city: row.city,
+                    lon: row.lng,
+                    lat: row.lat,
+                    iso2: row.iso2,
+                    iso3: row.iso3,
+                    local_name: row.admin_name,
                 });
             })
             .on('end', resolve)

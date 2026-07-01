@@ -7,7 +7,7 @@ export const getCityByName = async (query: string, page: number) => {
     const cityResponse: Array<InferAttributes<Model>> = await City.findAll({
         where: {
             city: {
-                [Op.iLike]: `%${query}%`
+                [Op.iLike]: `${query}%`
             }
         },
         limit: 20,

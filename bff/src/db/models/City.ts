@@ -12,6 +12,9 @@ class City extends Model {
             city: DataTypes.STRING,
             lat: DataTypes.FLOAT,
             lon: DataTypes.FLOAT,
+            iso2: DataTypes.STRING,
+            iso3: DataTypes.STRING,
+            local_name: DataTypes.STRING,
         }, {
             sequelize,
             tableName: "cities",
