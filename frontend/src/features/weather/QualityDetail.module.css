@@ -1,7 +1,7 @@
 .contentWrapper{
-    display: none;
-    width: inherit;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
     gap: var(--element-space-2);
     font-family: var(--font-redhat);
 }
@@ -14,10 +14,4 @@
 .contentCardMain{
     display: flex;
     gap: var(--element-space-2);
-}
-
-@media(min-width: 600px){
-    .contentWrapper{
-        display: flex;
-    }
 }
