@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import type { DropdownData } from "@planted/types";
 import { debounceWrapper } from "../../utils/debounceWrapper";
 import { DropdownService } from "../../services/DropdownService";
@@ -6,6 +6,7 @@ import { getWeatherData } from "../../redux/slices/weatherServiceSlice";
 import { useDispatch } from "react-redux";
 import type { AppDispatch } from "../../redux/store";
 import type { Coord } from "@planted/types/src/weather.type";
+import { loadFromLocal, saveToLocal } from "../../utils/localStorage";
 
 export function useDropdown() {
     
@@ -32,9 +33,16 @@ export function useDropdown() {
     }
 
     const handleOptionClick = ({lat, lon}: Coord) => {
+        saveToLocal<Coord>({item: {lat, lon}, tag: 'coordinates'});
         dispatch(getWeatherData({lat, lon}));
         setDropdownData([]);
     }
+
+    useEffect(() => {
+        const savedCoord = loadFromLocal<Coord>({tag: 'coordinates'});
+        if(!savedCoord) return;
+        dispatch(getWeatherData(savedCoord));
+    }, [])
 
     return { dropdownData, handleDropdownChange, handleOptionClick }
 }

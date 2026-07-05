@@ -9,12 +9,26 @@ import DayTime from './DayTime';
 import Grid from '../../components/Grid/Grid';
 import Row from '../../components/Row/Row';
 import { CircleGauge, Droplet, Eye, Sunrise, Sunset, Wind } from 'lucide-react';
+import Card from '../../components/Card/Card';
 
 export default function Weather(): ReactElement {
 
-    const { weatherServiceData } = useWeather();
+    const { weatherServiceData, weatherServiceDataLoading } = useWeather();
 
     return(
+        !weatherServiceData ?
+        <div className={style.contentWrapper}>
+            <Row>
+                <div className={style.selectWrapper}>
+                    <Card dark={true}>
+                        <h2 className={style.selectNotification}>
+                            {weatherServiceDataLoading ? 'Loading...' : 'Select a city to display weather'}
+                        </h2>
+                    </Card>
+                </div>
+            </Row>
+        </div>
+        :
         <div className={style.contentWrapper}>
             <Row>
                 <WeatherMain temp={Math.round(weatherServiceData?.temp || 0)} />

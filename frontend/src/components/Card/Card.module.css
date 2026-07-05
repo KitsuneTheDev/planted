@@ -8,6 +8,8 @@
     padding: var(--component-space-1);
     background-color: var(--color-theme-background-3);
     border-radius: 0.5em;
+    justify-content: center;
+    align-items: center;
 }
 
 .cardWrapper::-webkit-scrollbar{
