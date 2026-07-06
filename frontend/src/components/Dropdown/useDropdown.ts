@@ -11,6 +11,14 @@ import { loadFromLocal, saveToLocal } from "../../utils/localStorage";
 export function useDropdown() {
     
     const [dropdownData, setDropdownData] = useState<DropdownData[]>([]);
+    const [dropdownPlaceholder, setDropdownPlaceholder] = useState<string>(() => {
+        const saved = loadFromLocal<string>({tag: 'dropdownPlaceholder'});
+        if (!saved){
+            return '';
+        } else {
+            return saved;
+        }
+    });
     const dispatch = useDispatch<AppDispatch>();
 
     const search = useMemo(
@@ -32,9 +40,12 @@ export function useDropdown() {
         search(e.target.value);
     }
 
-    const handleOptionClick = ({lat, lon}: Coord) => {
+    const handleOptionClick = ({lat, lon}: Coord, e: React.MouseEvent<HTMLDivElement>) => {
+        const newPlaceholder = e.currentTarget.firstChild?.textContent || '';
+        saveToLocal<string>({item: newPlaceholder, tag: 'dropdownPlaceholder'})
         saveToLocal<Coord>({item: {lat, lon}, tag: 'coordinates'});
         dispatch(getWeatherData({lat, lon}));
+        setDropdownPlaceholder(newPlaceholder);
         setDropdownData([]);
     }
 
@@ -44,5 +55,5 @@ export function useDropdown() {
         dispatch(getWeatherData(savedCoord));
     }, [])
 
-    return { dropdownData, handleDropdownChange, handleOptionClick }
+    return { dropdownData, handleDropdownChange, handleOptionClick, dropdownPlaceholder }
 }
