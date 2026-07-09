@@ -3,9 +3,8 @@ import csv from 'csv-parser';
 import path from 'path';
 import City from "../models/City";
 import type { InferAttributes } from "sequelize";
-import { initModels, sequelize } from "../config";
 
-const CHUNK_SIZE: number = 1000;
+const CHUNK_SIZE: number = 1_000;
 
 interface cityRow {
     country: string;
@@ -18,10 +17,7 @@ interface cityRow {
 
 }
 
-initModels();
-await sequelize.authenticate();
-
-async function seedCity() {
+export async function seedCity() {
     const rows: Array<InferAttributes<City>>  = [];
 
     await new Promise((resolve, reject) => {
@@ -47,8 +43,5 @@ async function seedCity() {
         console.log(`Inserted ${Math.min((i + CHUNK_SIZE), rows.length)} / ${rows.length}`);
     }
 
-    console.log('Cities inserted into databse. Table -> cities');
+    console.log('Cities inserted into database. Table -> cities');
 }
-
-await seedCity();
-await sequelize.close();
