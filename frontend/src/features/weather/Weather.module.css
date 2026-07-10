@@ -22,9 +22,3 @@
 .optionalHr{
     display: none;
 }
-
-@media(min-width: 600px){
-    .optionalHr{
-        display: block;
-    }
-}

@@ -44,7 +44,7 @@ main{
     gap: var(--section-space-3);
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 900px) {
     header{
         padding: 0 var(--section-space-3);
             padding-top: var(--layout-space-1);
@@ -64,7 +64,13 @@ main{
 
     .contentWrapper{
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: var(--section-space-1);
+    }
+}
+
+@media (min-width: 1300px) {
+    .contentWrapper{
+        grid-template-columns: repeat(3, 1fr);
     }
 }
