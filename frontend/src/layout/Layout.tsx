@@ -1,5 +1,6 @@
 import style from './Layout.module.css';
 import Weather from '../features/weather/Weather';
+import Plants from '../features/plants/Plants';
 import Card from '../components/Card/Card';
 import Dropdown from '../components/Dropdown/Dropdown';
 import Row from '../components/Row/Row';
@@ -18,6 +19,7 @@ export default function Layout() {
                             <Dropdown />
                         </Row>
                         <Weather />
+                        <Plants />
                     </Card>
                 </div>
             </main>

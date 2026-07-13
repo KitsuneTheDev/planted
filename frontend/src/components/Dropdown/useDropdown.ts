@@ -53,7 +53,7 @@ export function useDropdown() {
         const savedCoord = loadFromLocal<Coord>({tag: 'coordinates'});
         if(!savedCoord) return;
         dispatch(getWeatherData(savedCoord));
-    }, [])
+    }, [dispatch])
 
     return { dropdownData, handleDropdownChange, handleOptionClick, dropdownPlaceholder }
 }

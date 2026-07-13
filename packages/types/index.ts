@@ -5,3 +5,4 @@ export type { IAppError } from "./src/IAppError.ts";
 export type { DropdownData } from './src/DropdownData.ts';
 export type { Weather } from './src/weatherTypes.ts';
 export type { IPlant } from './src/plant.type.ts';
+export type { ApiResponse } from './src/api.type.ts';
