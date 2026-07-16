@@ -8,7 +8,5 @@ export const getAllPlants = async (page: number) => {
         offset: 20 * (page - 1),
     });
 
-    console.log(plantResponse);
-
     return plantResponse;
 }

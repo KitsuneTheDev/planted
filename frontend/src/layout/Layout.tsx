@@ -19,6 +19,8 @@ export default function Layout() {
                             <Dropdown />
                         </Row>
                         <Weather />
+                    </Card>
+                    <Card>
                         <Plants />
                     </Card>
                 </div>

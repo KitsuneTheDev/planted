@@ -71,6 +71,6 @@ main{
 
 @media (min-width: 1300px) {
     .contentWrapper{
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr 2fr;
     }
 }

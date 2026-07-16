@@ -1,6 +1,7 @@
 .cardWrapper{
     width: 100%;
     min-height: 58px;
+    max-height: 597px;
     display: flex;
     flex-direction: column;
     height: fit-content;
