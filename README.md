@@ -44,5 +44,5 @@ Add plants to your household and generate (AI-powered) daily tasks that let you 
 * Perenual Plant API
 Anthropic Claude API
 
-![web](/assets/demo/plantedWeb.png)
-![mobile](/assets/demo/plantedMobile.png)
+![web](/assets/demo/plantedWeb.jpeg)
+![mobile](/assets/demo/plantedMobile.jpeg)
