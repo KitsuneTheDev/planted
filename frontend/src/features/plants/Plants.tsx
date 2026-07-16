@@ -1,19 +1,19 @@
-// import { useEffect } from 'react';
-// import style from './Plants.module.css';
-// import { usePlants } from './usePlants';
+import { useEffect } from 'react';
+import style from './Plants.module.css';
+import { usePlants } from './usePlants';
 
-// export default function MyPlants() {
+export default function MyPlants() {
     
-//     const { plants, error, getPlantsData } = usePlants();
+    const { plants, error, getPlantsData } = usePlants();
 
-//     useEffect(() => {
-//         getPlantsData();
-//     }, [])
+    useEffect(() => {
+        getPlantsData();
+    }, [])
 
-//     console.log(plants);
+    console.log(plants);
 
-//     return(
-//         <div className={style.myplantsContainer}>
-//         </div>
-//     );
-// }
+    return(
+        <div className={style.myplantsContainer}>
+        </div>
+    );
+}
