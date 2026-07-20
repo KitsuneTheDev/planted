@@ -14,13 +14,13 @@ export default function Layout() {
             </header>
             <main role='main-content-display'>
                 <div className={style.contentWrapper}>
-                    <Card>
+                    <Card dark={true}>
                         <Row>
                             <Dropdown />
                         </Row>
                         <Weather />
                     </Card>
-                    <Card>
+                    <Card dark={true}>
                         <Plants />
                     </Card>
                 </div>

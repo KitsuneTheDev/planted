@@ -78,7 +78,7 @@
 
 .aqiMain{
     display: flex;
-    gap: var(--element-space-1);
+    gap: var(--element-space-3);
 }
 
 .aqiMain>div{
@@ -88,7 +88,7 @@
 
 .mainContext{
     color: var(--color-theme-primary-1);
-    font-size: var(--font-size-5);
+    font-size: var(--font-size-6);
     transform: translateY(8%);
 }
 

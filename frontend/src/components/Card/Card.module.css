@@ -11,6 +11,7 @@
     border-radius: 0.5em;
     justify-content: center;
     align-items: center;
+    /* box-shadow: 0 2px 3px -2px var(--color-theme-primary-3); */
 }
 
 .cardWrapper::-webkit-scrollbar{

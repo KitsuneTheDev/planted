@@ -4,7 +4,7 @@ import type { InferAttributes, Model } from 'sequelize';
 
 export const getAllPlants = async (page: number) => {
     const plantResponse: Array<InferAttributes<Model>> = await Plant.findAll({
-        limit: 20,
+        limit: 21,
         offset: 20 * (page - 1),
     });
 

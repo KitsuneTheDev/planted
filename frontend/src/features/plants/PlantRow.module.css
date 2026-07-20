@@ -1,0 +1,22 @@
+.contentWrapper{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-bottom: var(--element-space-1);
+    font-family: var(--font-redhat);
+    box-shadow: 0 1px 2px -2px var(--color-text-secondary);
+    margin-bottom: var(--element-space-2);
+    font-size: var(--font-size-3);
+}
+
+.contentElement{
+    color: var(--color-text-secondary);
+}
+
+.contentElement:nth-of-type(1){
+    color: var(--color-text-white);
+}
+
+.contentElement:hover{
+    cursor: pointer;
+}
