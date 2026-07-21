@@ -2,6 +2,12 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { PlantService } from "../../services/PlantService";
 import type { IPlant } from "@planted/types";
 
+/*
+!!! 
+APLY RTKQ
+!!!
+*/
+
 export interface plantState {
     plantServiceData: Array<IPlant> | [];
     plantServiceDataLoading: boolean;
