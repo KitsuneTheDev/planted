@@ -1,4 +1,9 @@
 .contentWrapper{
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+.contentMain{
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);

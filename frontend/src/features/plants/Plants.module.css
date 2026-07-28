@@ -4,6 +4,7 @@
     overflow-y: scroll;
     font-family: var(--font-redhat);
     padding-right: var(--element-space-3);
+    position: relative;
 }
 
 .contentWrapper::-webkit-scrollbar{

@@ -1,10 +1,12 @@
-import { useEffect } from 'react';
+import { useState } from 'react';
 import style from './Plants.module.css';
 import { usePlants } from './usePlants';
 import { PlantRow } from './PlantRow';
 import { ArrowBigLeft, ArrowBigRight } from 'lucide-react';
 
 export default function MyPlants() {
+
+    const [selectedPlantId, setSelectedPlantId] = useState<string |null>(null);
     
     const { plants, error, getPlantsData, isMore, isFirstPage, handleNextClick, handleBackClick } = usePlants();
 
@@ -21,13 +23,18 @@ export default function MyPlants() {
                             return(
                                 <PlantRow
                                     key={plant.id}
-                                    id={plant.id}
-                                    plant_name={plant.plant_name}
-                                    growth={plant.growth}
-                                    sunlight={plant.sunlight}
-                                    soil={plant.soil}
-                                    watering={plant.watering}
-                                    fertilization={plant.fertilization} />
+                                    plant={{
+                                        id: plant.id, 
+                                        plant_name: plant.plant_name,
+                                        growth: plant.growth,
+                                        sunlight: plant.sunlight,
+                                        soil: plant.soil,
+                                        watering: plant.watering,
+                                        fertilization: plant.fertilization,
+                                    }}
+                                    isExpanded={selectedPlantId === plant.id}
+                                    onToggle={() => setSelectedPlantId(prev => prev === plant.id ? null : plant.id)}
+                                />
                             );
                         })
                     }
