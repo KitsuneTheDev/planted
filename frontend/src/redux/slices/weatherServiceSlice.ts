@@ -4,21 +4,23 @@ import type { Weather } from "@planted/types";
 import type { Coordinates } from "../../types/common.type";
 
 export interface weatherState {
+    coordinates: Coordinates | null,
     weatherServiceData: Weather | null,
     weatherServiceDataLoading: boolean,
     weatherServiceDataError: string | null,
 }
 
 const initialState: weatherState = {
+    coordinates: null,
     weatherServiceData: null,
     weatherServiceDataLoading: false,
     weatherServiceDataError: null,
 }
 
 export const getWeatherData = createAsyncThunk(
-    "weather/getWeatherData", async (coord: Coordinates, { rejectWithValue }) => {
+    "weather/getWeatherData", async (coordinates, { rejectWithValue }) => {
         try {
-            const response = await WeatherService.getWeatherData(coord);
+            const response = await WeatherService.getWeatherData(coordinates);
 
             if(response?.isError) {
                 return rejectWithValue(response.responseData.error || 'No response from weather service.');

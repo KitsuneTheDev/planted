@@ -13,9 +13,9 @@ export class WeatherApi {
         const response = await this.#client.get<CurrentWeatherResponse>(`lat=${coord.lat}&lon=${coord.lon}`);
 
         if(response.isError) {
-            throw new Error((response.responseData as {error: string}).error);
+            throw new Error(response.responseData.error);
         }
 
-        return response.responseData as CurrentWeatherResponse;
+        return response.responseData;
     }
 }

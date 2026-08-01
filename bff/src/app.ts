@@ -2,7 +2,8 @@ import express from 'express';
 import { globalErrorHandler } from './controller/errorController.js';
 import WeatherRouter from './route/weather.route.js';
 import SearchRouter from './route/cityQuery.route.js';
-import PlantRouter from './route/plant.route.js'
+import PlantRouter from './route/plant.route.js';
+import ClimatologyRouter from './route/climatology.route.js';
 import { initDatabase, initModels } from './db/config.js';
 
 await initDatabase();
@@ -12,6 +13,7 @@ const app  = express();
 app.use('/api', WeatherRouter);
 app.use('/api', SearchRouter);
 app.use('/api', PlantRouter);
+app.use('/api', ClimatologyRouter);
 
 
 // Error Handlers KEEP THEM LAST
