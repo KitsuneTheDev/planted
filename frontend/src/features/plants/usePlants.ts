@@ -1,25 +1,34 @@
 import { useState, useMemo } from 'react';
 import { useGetAllPlantsDataQuery } from '../../redux/reduxApis/plantApi';
 import type { IPlant } from '@planted/types';
+import { useGetClimatologyDataQuery } from '../../redux/reduxApis/climatologyApi';
 
 export function usePlants() {
 
     const [page, setPage] = useState<number>(1);
 
     const {
-        data: response,
-        error,
-        isLoading,
-        isFetching
+        data: plantData,
+        error: plantError,
+        isLoading: plantLoading,
+        isFetching: plantFetching,
     } = useGetAllPlantsDataQuery(page);
 
-    const isMore: boolean = (response?.length ?? 0) > 20;
+    const {
+        data: climatologyData,
+        error: climatologyError,
+        isLoading: climatologyLoading,
+        isFetching: climatologyFetching,
+    } = useGetClimatologyDataQuery();
+
+
+    const isMore: boolean = (plantData?.length ?? 0) > 20;
     const isFirstPage: boolean = page < 2;
 
     const plants: Array<IPlant> = useMemo(() => {
-        if(!response) return [];
-        return isMore ? response.slice(0, 20) : response;
-    }, [response, isMore]);
+        if(!plantData) return [];
+        return isMore ? plantData.slice(0, 20) : plantData;
+    }, [plantData, isMore]);
 
     const handleNextClick = () => {
         if(!isMore) return;
@@ -37,12 +46,16 @@ export function usePlants() {
 
     return { 
         plants, 
-        error: error ? `Error occured: ${JSON.stringify(error)}` : null, 
-        isLoading,
-        isFetching,
+        plantError: plantError ? `Error occured: ${JSON.stringify(plantError)}` : null, 
+        plantLoading,
+        plantFetching,
         isMore,
         isFirstPage,
         handleNextClick,
-        handleBackClick 
+        handleBackClick,
+        climatologyData,
+        climatologyError: climatologyError ? `Error occured: ${JSON.stringify(climatologyError)}` : null,
+        climatologyLoading,
+        climatologyFetching, 
     };
 }

@@ -17,7 +17,10 @@ const initialState: weatherState = {
     weatherServiceDataError: null,
 }
 
-export const getWeatherData = createAsyncThunk(
+export const getWeatherData = createAsyncThunk<
+    Weather,
+    Coordinates
+    >(
     "weather/getWeatherData", async (coordinates, { rejectWithValue }) => {
         try {
             const response = await WeatherService.getWeatherData(coordinates);

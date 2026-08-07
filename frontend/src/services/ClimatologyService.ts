@@ -15,7 +15,8 @@ export class ClimatologyService {
 
     static async getClimatologyData(coord: Coordinates): Promise<ApiResponse<IClimatologyResponse>> {
         const client = ClimatologyService.getClient();
-        const response = client.get<IClimatologyResponse>(`?${coord.lon}&${coord.lat}`);
+        console.log(coord);
+        const response = client.get<IClimatologyResponse>(`?lon=${coord.lon}&lat=${coord.lat}`);
 
         return response;
     }

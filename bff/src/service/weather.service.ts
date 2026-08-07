@@ -15,7 +15,9 @@ export async function getCurrentWeather(coord: Coordinates, apis = {weatherApi, 
     const weather = weatherResult.status === 'fulfilled' ? weatherResult.value : null;
     const quality = qualityResult.status === 'fulfilled' ? qualityResult.value : null;
 
+
     const currentWeatherData = {
+        coord: weather?.coord,
         temp: weather?.main.temp ? Math.round(weather?.main.temp) : -1,
         feels_like: weather?.main.feels_like ? Math.round(weather?.main.temp) : -1,
         weather_detail: {

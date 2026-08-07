@@ -1,4 +1,5 @@
 export interface Weather {
+    coord: {lat: number, lon:number};
     temp: number;
     feels_like: number;
     weather_detail: WeatherDetail;
