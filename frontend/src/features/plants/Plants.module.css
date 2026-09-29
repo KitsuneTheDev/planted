@@ -1,6 +1,5 @@
 .contentWrapper{
     width: 100%;
-    height: 100%;
     overflow-y: scroll;
     font-family: var(--font-redhat);
     padding-right: var(--element-space-3);

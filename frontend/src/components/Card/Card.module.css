@@ -17,3 +17,9 @@
 .cardWrapper::-webkit-scrollbar{
     display: none;
 }
+
+@media(max-width: 1000px) {
+    .cardWrapper{
+        max-height: 576px;
+    }
+}
